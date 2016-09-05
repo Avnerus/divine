@@ -1,4 +1,5 @@
 import EventEmitter from 'events'
+import TranslationService from './translation_service';
 
 
 const WIDTH = 1920;
@@ -19,6 +20,12 @@ export default class  {
         this.stage = new PIXI.Container();
         this.renderer = PIXI.autoDetectRenderer(WIDTH, HEIGHT);
         this.renderer.backgroundColor = 0x00FF00;
+
+        this.translationService = new TranslationService();
+
+        this.scene = new PIXI.Container();
+        this.stage.addChild(this.scene);
+
     }
 
     load(onLoad) {
@@ -30,6 +37,18 @@ export default class  {
         this.container = document.getElementById('game');
         this.container.appendChild(this.renderer.view);
         this.resize();
+
+        /*
+        this.translationService.test("Good luck")
+        .then((result) => {
+            console.log("BOO", result);
+        });*/
+
+        let text = new PIXI.Text('Good luck',{fontFamily : 'Arial', fontSize: 48, fill : 0x000000, align : 'center'});
+        text.anchor.set(0.5,0.5);
+        text.position.set(WIDTH / 2, HEIGHT / 2);
+        this.scene.addChild(text);
+
 
     }
 
