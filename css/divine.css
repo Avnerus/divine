@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+#game {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.splash {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.splash-container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    color: white;
+    font-size: 36px;
+}
+#start-container {
+    display:none;
+}
+
+#start-button {
+    color: white;
+    margin: auto;
+}
+
+#loading-image {
+    margin: auto;
+}
