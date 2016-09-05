@@ -4,7 +4,7 @@
   "description": "Divine",
   "main": "index.js",
   "scripts": {
-    "start": "budo src/index.js:bundle.js -- -t [ babelify --presets [ es2015  ]  ] -t [ glslify  ] -t [ browserify-shim  ]"
+    "start": "budo src/index.js:bundle.js -- -t [ babelify --presets [ es2015  ]  ] -t [ glslify  ] -t [ browserify-shim  ]  -g [ aliasify ]"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Avnerus/tzina#readme",
   "devDependencies": {
+    "aliasify": "^2.0.0",
     "babel-preset-es2015": "^6.5.0",
     "babelify": "^7.2.0",
     "beefy": ">=0.7.1",
@@ -36,6 +37,7 @@
   "dependencies": {
     "fullscreen": "^1.1.0",
     "node-google-translate-skidz": "^0.1.1",
+    "querystring-browser": "^1.0.4",
     "stats.js": "^0.16.0"
   },
   "browserify": {
@@ -52,5 +54,6 @@
     "presets": [
       "es2015"
     ]
-  }
+  },
+  "aliasify": "./aliasifyConfig.js"
 }

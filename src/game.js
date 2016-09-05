@@ -38,11 +38,15 @@ export default class  {
         this.container.appendChild(this.renderer.view);
         this.resize();
 
-        /*
-        this.translationService.test("Good luck")
+        
+        this.translationService.jumble("Good luck")
         .then((result) => {
             console.log("BOO", result);
-        });*/
+            let text = new PIXI.Text(result, {fontFamily: 'Arial', fontSize: 48, fill: 0x000000});
+                text.anchor.set(0.5,0.5);
+                text.position.set(WIDTH / 2, HEIGHT / 1.8);
+                this.scene.addChild(text);
+        });
 
         let text = new PIXI.Text('Good luck',{fontFamily : 'Arial', fontSize: 48, fill : 0x000000, align : 'center'});
         text.anchor.set(0.5,0.5);
