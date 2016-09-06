@@ -1,6 +1,7 @@
 import EventEmitter from 'events'
 import SocketController from './socket-controller'
 import Angel from './angel';
+import Gaijin from './gaijin';
 
 export default class  {
     constructor(config) {
@@ -17,7 +18,9 @@ export default class  {
         this.socketController = new SocketController();
         this.socketController.init();
 
-        this.angel = new Angel();
+        /*this.angel = new Angel();*/
+
+        this.gaijin = new Gaijin(this.config, this.socketController);
 
         this.stage = new PIXI.Container();
         this.renderer = PIXI.autoDetectRenderer(this.config.width, this.config.height);
@@ -29,7 +32,8 @@ export default class  {
     }
 
     load(onLoad) {
-        this.angel.init()
+        /*this.angel.init();*/
+        this.gaijin.init();
         onLoad();
     }
 
@@ -39,15 +43,18 @@ export default class  {
         this.container.appendChild(this.renderer.view);
         this.resize();
 
-        this.angel.show();
+        /*this.angel.show();*/
+        this.gaijin.show();
+
+        let text = new PIXI.Text("Good luck" ,{fontFamily : 'Arial', fontSize: 48, fill : 0x000000, align : 'center'});
+        text.anchor.set(0.5,0.5);
+        text.position.set(this.config.width / 2, this.config.height / 2);
+        this.scene.addChild(text);
 
         this.socketController.emit("jumble", {text: "Good Luck"});
         this.socketController.on("message", (data) => {
             console.log("Message! ", data);
-            let text = new PIXI.Text(data.text ,{fontFamily : 'Arial', fontSize: 48, fill : 0x000000, align : 'center'});
-            text.anchor.set(0.5,0.5);
-            text.position.set(this.config.width / 2, this.config.height / 2);
-            this.scene.addChild(text);
+            text.text = data.text;            
         });
     }
 

@@ -24,11 +24,11 @@ this.translationService.jumble("Good luck")
         });*/
 
 io.on('connection', (socket) => {
-    socket.on('jumble',  (data) => {
+    socket.on('gaijin-message',  (data) => {
         console.log("Jumble!", data)
-        translationService.jumble("Good luck")
+        translationService.jumble(data.text)
         .then((result) => {
-            console.log(result);
+            console.log("Final result" , result);
             socket.emit("message", {text: result});
         });
     });

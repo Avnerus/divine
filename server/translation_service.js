@@ -6,19 +6,20 @@ export default class TranslationService {
     }
     init() {
     }
-    translator(text,source,target){
-        return new Promise((resolve, reject) => {
-            translate({
-                text: text,
-                source: source,
-                target: target
-            }, function(result){
-                console.log(result);
-                resolve(result);
-            });
+
+    jumble(text) {
+        return this.translate(text, "en", "ru")
+        .then((result) => {
+            console.log("1", result);
+            return this.translate(result, "ru", "ja")
+        })
+        .then((result) => {
+            console.log("2", result);
+            return this.translate(result, "ja", "en")
         });
     }
-    jumble(text,source = "en",target = "ja"){
+
+    translate(text,source = "en",target = "ja"){
         console.log(text);
         return new Promise((resolve, reject) => {
             translate({
@@ -26,15 +27,8 @@ export default class TranslationService {
                 source: source,
                 target: target
             }, function(result){
-                console.log(result);
-                translate({
-                    text: result,
-                    source: target,
-                    target: source
-                }, function(res){
-                    console.log(res);
-                    resolve(res);
-                });
+                    console.log(result);
+                    resolve(result);
             });
         });
     }

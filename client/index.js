@@ -62,7 +62,7 @@ window.onload = function() {
 }
 
 function start() {
-    document.getElementById('start-container').style.display = "none";
+    document.getElementById('splash-container').style.display = "none";
     document.getElementById('game').appendChild(stats.dom);
     game.start();
     window.addEventListener('resize', resize, false);
