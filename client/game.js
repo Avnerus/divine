@@ -46,16 +46,6 @@ export default class  {
         /*this.angel.show();*/
         this.gaijin.show();
 
-        let text = new PIXI.Text("Good luck" ,{fontFamily : 'Arial', fontSize: 48, fill : 0x000000, align : 'center'});
-        text.anchor.set(0.5,0.5);
-        text.position.set(this.config.width / 2, this.config.height / 2);
-        this.scene.addChild(text);
-
-        this.socketController.emit("jumble", {text: "Good Luck"});
-        this.socketController.on("message", (data) => {
-            console.log("Message! ", data);
-            text.text = data.text;            
-        });
     }
 
     animate(t) {

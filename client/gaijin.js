@@ -10,6 +10,19 @@ export default class extends PIXI.Container  {
         	this.sendMessage(event.target["message"].value)
         	event.preventDefault()
         })
+
+        this.socketController.on("message", (data) => {
+            this.showMessage(data.text);
+        });
+    }
+
+    showMessage(text) {
+      $(function(){
+          $("#gaijin-output").typed({
+            strings: [text],
+            typeSpeed: 0
+          });
+      });
     }
 
     show() {

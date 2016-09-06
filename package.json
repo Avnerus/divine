@@ -1,5 +1,5 @@
 {
-  "name": "tzina",
+  "name": "divine",
   "version": "1.0.0",
   "description": "Divine",
   "main": "index.js",
@@ -61,6 +61,5 @@
     "presets": [
       "es2015"
     ]
-  },
-  "aliasify": "./aliasifyConfig.js"
+  }
 }
