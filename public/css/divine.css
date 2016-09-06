@@ -39,3 +39,21 @@ body {
 #loading-image {
     margin: auto;
 }
+
+
+#game-ui {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+#box {
+    width: 80%;
+    height: 200px;
+    background-color: red;
+    position: absolute;
+    bottom: 50px;
+    height: 15%;
+}
+

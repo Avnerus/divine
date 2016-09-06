@@ -1,5 +1,6 @@
 import EventEmitter from 'events'
 import SocketController from './socket-controller'
+import Angel from './angel';
 
 const WIDTH = 1920;
 const HEIGHT = 1080;
@@ -19,6 +20,8 @@ export default class  {
         this.socketController = new SocketController();
         this.socketController.init();
 
+        this.angel = new Angel();
+
         this.stage = new PIXI.Container();
         this.renderer = PIXI.autoDetectRenderer(WIDTH, HEIGHT);
         this.renderer.backgroundColor = 0x00FF00;
@@ -29,6 +32,7 @@ export default class  {
     }
 
     load(onLoad) {
+        this.angel.init()
         onLoad();
     }
 
@@ -37,6 +41,8 @@ export default class  {
         this.container = document.getElementById('game');
         this.container.appendChild(this.renderer.view);
         this.resize();
+
+        this.angel.show();
 
         this.socketController.emit("jumble", {text: "Good Luck"});
         this.socketController.on("message", (data) => {
