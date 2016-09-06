@@ -2,6 +2,7 @@ import EventEmitter from 'events'
 import SocketController from './socket-controller'
 import Angel from './angel';
 import Gaijin from './gaijin';
+import Window from './window'
 
 export default class  {
     constructor(config) {
@@ -29,12 +30,27 @@ export default class  {
         this.scene = new PIXI.Container();
         this.stage.addChild(this.scene);
 
+        this.spaceWindow = new Window();
+        this.spaceWindow.position.set(300,500);
+        this.scene.addChild(this.spaceWindow);
+
     }
 
     load(onLoad) {
+        PIXI.loader.once('complete',() => {
+            console.log("Loading complete");
+
+            this.spaceWindow.init();
+
+            onLoad();
+        });
+
         /*this.angel.init();*/
         this.gaijin.init();
-        onLoad();
+        this.spaceWindow.load();
+
+        PIXI.loader.load();
+
     }
 
 
@@ -54,6 +70,7 @@ export default class  {
     }
 
     update() {
+        this.spaceWindow.update();
     }
 
     render() {
