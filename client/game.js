@@ -1,6 +1,5 @@
 import EventEmitter from 'events'
-import TranslationService from './translation_service';
-
+import SocketController from './socket-controller'
 
 const WIDTH = 1920;
 const HEIGHT = 1080;
@@ -17,11 +16,12 @@ export default class  {
         this.emitter = new CustomEmitter();
         global.events = this.emitter;
 
+        this.socketController = new SocketController();
+        this.socketController.init();
+
         this.stage = new PIXI.Container();
         this.renderer = PIXI.autoDetectRenderer(WIDTH, HEIGHT);
         this.renderer.backgroundColor = 0x00FF00;
-
-        this.translationService = new TranslationService();
 
         this.scene = new PIXI.Container();
         this.stage.addChild(this.scene);
@@ -38,22 +38,14 @@ export default class  {
         this.container.appendChild(this.renderer.view);
         this.resize();
 
-        
-        this.translationService.jumble("Good luck")
-        .then((result) => {
-            console.log("BOO", result);
-            let text = new PIXI.Text(result, {fontFamily: 'Arial', fontSize: 48, fill: 0x000000});
-                text.anchor.set(0.5,0.5);
-                text.position.set(WIDTH / 2, HEIGHT / 1.8);
-                this.scene.addChild(text);
+        this.socketController.emit("jumble", {text: "Good Luck"});
+        this.socketController.on("message", (data) => {
+            console.log("Message! ", data);
+            let text = new PIXI.Text(data.text ,{fontFamily : 'Arial', fontSize: 48, fill : 0x000000, align : 'center'});
+            text.anchor.set(0.5,0.5);
+            text.position.set(WIDTH / 2, HEIGHT / 2);
+            this.scene.addChild(text);
         });
-
-        let text = new PIXI.Text('Good luck',{fontFamily : 'Arial', fontSize: 48, fill : 0x000000, align : 'center'});
-        text.anchor.set(0.5,0.5);
-        text.position.set(WIDTH / 2, HEIGHT / 2);
-        this.scene.addChild(text);
-
-
     }
 
     animate(t) {
