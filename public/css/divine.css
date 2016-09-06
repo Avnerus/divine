@@ -48,12 +48,17 @@ body {
     width: 100%;
     position: absolute;
 }
-#box {
-    width: 80%;
-    height: 200px;
-    background-color: red;
+#angel-ui {
     position: absolute;
     bottom: 50px;
-    height: 15%;
+}
+.angel-input {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    height: 40%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
 }
 

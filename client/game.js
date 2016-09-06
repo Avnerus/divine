@@ -2,9 +2,6 @@ import EventEmitter from 'events'
 import SocketController from './socket-controller'
 import Angel from './angel';
 
-const WIDTH = 1920;
-const HEIGHT = 1080;
-
 export default class  {
     constructor(config) {
         console.log("Game constructed!")
@@ -23,8 +20,8 @@ export default class  {
         this.angel = new Angel();
 
         this.stage = new PIXI.Container();
-        this.renderer = PIXI.autoDetectRenderer(WIDTH, HEIGHT);
-        this.renderer.backgroundColor = 0x00FF00;
+        this.renderer = PIXI.autoDetectRenderer(this.config.width, this.config.height);
+        this.renderer.backgroundColor = 0x003F54;
 
         this.scene = new PIXI.Container();
         this.stage.addChild(this.scene);
@@ -49,7 +46,7 @@ export default class  {
             console.log("Message! ", data);
             let text = new PIXI.Text(data.text ,{fontFamily : 'Arial', fontSize: 48, fill : 0x000000, align : 'center'});
             text.anchor.set(0.5,0.5);
-            text.position.set(WIDTH / 2, HEIGHT / 2);
+            text.position.set(this.config.width / 2, this.config.height / 2);
             this.scene.addChild(text);
         });
     }
