@@ -2,7 +2,6 @@ import EventEmitter from 'events'
 import SocketController from './socket-controller'
 import Angel from './angel';
 import Gaijin from './gaijin';
-import Window from './window'
 
 export default class  {
     constructor(config) {
@@ -30,24 +29,18 @@ export default class  {
         this.scene = new PIXI.Container();
         this.stage.addChild(this.scene);
 
-        this.spaceWindow = new Window();
-        this.spaceWindow.position.set(300,500);
-        this.scene.addChild(this.spaceWindow);
 
     }
 
     load(onLoad) {
         PIXI.loader.once('complete',() => {
             console.log("Loading complete");
-
-            this.spaceWindow.init();
-
+            this.gaijin.init();
             onLoad();
         });
 
+        this.gaijin.load();
         /*this.angel.init();*/
-        this.gaijin.init();
-        this.spaceWindow.load();
 
         PIXI.loader.load();
 
@@ -59,9 +52,19 @@ export default class  {
         this.container.appendChild(this.renderer.view);
         this.resize();
 
-        /*this.angel.show();*/
-        this.gaijin.show();
+        $("#portal").show();
 
+        $("#gaijin-button").click(() => {this.showInterface(this.gaijin)});
+        $("#angel-button").click(() => {this.showInterface(this.angel)});
+
+        /*this.angel.show();*/
+
+    }
+
+    showInterface(module) {
+        $("#portal").hide();
+        module.show();
+        this.scene.addChild(module);
     }
 
     animate(t) {
@@ -70,7 +73,7 @@ export default class  {
     }
 
     update() {
-        this.spaceWindow.update();
+        this.gaijin.update();
     }
 
     render() {

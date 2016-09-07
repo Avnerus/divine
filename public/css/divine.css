@@ -40,6 +40,37 @@ body {
     margin: auto;
 }
 
+#portal {
+   height: 100%;
+   width: 100%;
+   display: flex;
+}
+
+.portal-button {
+    font-size: 52px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    width: 50%;
+    color: black;
+}
+
+#gaijin-button {
+    background-color: #00ff00;
+}
+#gaijin-button:hover {
+    background-color: #00dd00;
+}
+
+#angel-button {
+    background-color: #00ffff;
+}
+
+#angel-button:hover {
+    background-color: #00dddd;
+}
 
 #game-ui {
     display: flex;

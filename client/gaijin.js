@@ -1,7 +1,10 @@
+import Window from './window'
+
 export default class extends PIXI.Container  {
     constructor(config, socketController) {
         super();
         this.socketController = socketController;
+        this.spaceWindow = new Window();
     }
     
     init() {
@@ -15,6 +18,10 @@ export default class extends PIXI.Container  {
         this.socketController.on("message", (data) => {
             this.showMessage(data.text);
         });
+
+        this.spaceWindow.init();
+        this.spaceWindow.position.set(300,500);
+        this.addChild(this.spaceWindow);
     }
 
     showMessage(text) {
@@ -32,7 +39,11 @@ export default class extends PIXI.Container  {
     }
 
     update() {
+        this.spaceWindow.update();
+    }
 
+    load() {
+        this.spaceWindow.load();
     }
 
     sendMessage(message) {
