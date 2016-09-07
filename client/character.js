@@ -22,11 +22,14 @@ export default class extends PIXI.Container  {
     }
 
     say(text) {
-        $(function(){
-            $("#gaijin-box").typed({
-              strings: [text],
-              typeSpeed: 0,
-              showCursor: false
+        return new Promise((resolve, reject) => {
+            $(() => {
+                $("#gaijin-box").typed({
+                    strings: ["<b>" + this.name + "</b>: " + text],
+                    typeSpeed: 0,
+                    showCursor: false,
+                    onStringTyped: () => {resolve()}
+                });
             });
         });
     }

@@ -1,4 +1,5 @@
 import Window from './window'
+import Choices from './choices'
 
 export default class extends PIXI.Container  {
     constructor(config, socketController, characters) {
@@ -57,6 +58,7 @@ export default class extends PIXI.Container  {
 
     load() {
         this.spaceWindow.load();
+        Choices.load();
     }
 
     sendMessage(message) {
@@ -66,11 +68,23 @@ export default class extends PIXI.Container  {
 
     characterEnters(data) {
         let character = this.characters[data.name];
-        console.log("Character enters", character);
+        console.log("Character enters", data);
         character.position.x = -character.width;
         this.addChild(character);
         TweenMax.to(character.position, 1, {x: 500, onComplete: () => {
             character.say(data.text)
+            .then(() => {
+                let choices = new Choices(data.choices, (choice) => {this.onChoice(choice)});
+                choices.init();
+                choices.position.set(1100,50);
+                choices.alpha = 0;
+                this.addChild(choices);
+                TweenMax.to(choices, 1, {alpha: 1});
+            })
         }});
+    }
+
+    onChoice(choice) {
+        console.log("Player choice! ", choice);
     }
 }
