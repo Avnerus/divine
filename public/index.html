@@ -24,15 +24,25 @@
                 <a id="angel-button" class="portal-button" target="_self" href="#">FISH</a>
             </div>
             <div id="angel-ui" style="display:none;">
-                <div id="angel-console" class="angel-input"></div>
-                <div id="gaijin-comm" class="angel-input"></div>
+                <div id="angel-console">
+                    <form id="angel-console-form" method="POST" autocomplete="off">
+                        <input name="console-message" id="console-input" class="comm-input"></input>
+                    </form>
+                </div>
+                <div id="angel-wingman" class="comm-wingman"></div>
+                <div id="angel-box" class="comm-box">
+                    <div id="angel-output" class="comm-output">Angel</div>
+                    <form id="angel-form" class="comm-form" method="POST" autocomplete="off">
+                        <input name="message" id="angel-input" class="comm-input"></input>
+                    </form>
+                </div>
             </div>
             <div id="gaijin-ui" style="display:none;">
-                <div id="wingman"></div>
-                <div id="gaijin-box">
-                    <div id="gaijin-output">Gaijin</div>
-                    <form id="gaijin-form" method="POST" autocomplete="off">
-                        <input name="message" id="gaijin-input"></input>
+                <div id="gaijin-wingman" class="comm-wingman"></div>
+                <div id="gaijin-box" class="comm-box">
+                    <div id="gaijin-output" class="comm-output">Gaijin</div>
+                    <form id="gaijin-form" class="comm-form" method="POST" autocomplete="off">
+                        <input name="message" id="gaijin-input" class="comm-input"></input>
                     </form>
                 </div>
             </div>

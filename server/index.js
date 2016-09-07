@@ -24,12 +24,20 @@ this.translationService.jumble("Good luck")
         });*/
 
 io.on('connection', (socket) => {
-    socket.on('gaijin-message',  (data) => {
+    socket.on('gaijin-outbox',  (data) => {
+        console.log("Gaijin Jumble!", data)
+        translationService.jumble(data.text)
+        .then((result) => {
+            console.log("Final result, sending to angel" , result);
+            socket.broadcast.emit("angel-inbox", {text: result});
+        });
+    });
+    socket.on('angel-outbox',  (data) => {
         console.log("Jumble!", data)
         translationService.jumble(data.text)
         .then((result) => {
-            console.log("Final result" , result);
-            socket.emit("message", {text: result});
+            console.log("Final result, sending to gaijin" , result);
+            socket.broadcast.emit("gaijin-inbox", {text: result});
         });
     });
 });

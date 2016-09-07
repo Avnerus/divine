@@ -3,7 +3,7 @@ export default class SocketController {
         console.log("Socket controller constructed!")
     }
     init() {
-        this.socket = io('http://localhost:3000');
+        this.socket = io('http://' + window.location.hostname + ":" + window.location.port);
     }
     emit(message, args) {
         console.log("Sending message ", message);

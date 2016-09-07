@@ -18,9 +18,8 @@ export default class  {
         this.socketController = new SocketController();
         this.socketController.init();
 
-        /*this.angel = new Angel();*/
-
         this.gaijin = new Gaijin(this.config, this.socketController);
+        this.angel = new Angel(this.config, this.socketController);
 
         this.stage = new PIXI.Container();
         this.renderer = PIXI.autoDetectRenderer(this.config.width, this.config.height);
@@ -35,12 +34,12 @@ export default class  {
     load(onLoad) {
         PIXI.loader.once('complete',() => {
             console.log("Loading complete");
-            this.gaijin.init();
+
             onLoad();
         });
 
         this.gaijin.load();
-        /*this.angel.init();*/
+        this.angel.load();
 
         PIXI.loader.load();
 
@@ -63,6 +62,7 @@ export default class  {
 
     showInterface(module) {
         $("#portal").hide();
+        module.init();
         module.show();
         this.scene.addChild(module);
     }
@@ -74,6 +74,7 @@ export default class  {
 
     update() {
         this.gaijin.update();
+        this.angel.update();
     }
 
     render() {

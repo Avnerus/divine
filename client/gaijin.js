@@ -5,6 +5,7 @@ export default class extends PIXI.Container  {
         super();
         this.socketController = socketController;
         this.spaceWindow = new Window();
+        this.active = false;
     }
     
     init() {
@@ -15,13 +16,15 @@ export default class extends PIXI.Container  {
             event.target["message"].value = "";
         })
 
-        this.socketController.on("message", (data) => {
+        this.socketController.on("gaijin-inbox", (data) => {
+            console.log("Incoming message to gaijin! ", data);
             this.showMessage(data.text);
         });
 
         this.spaceWindow.init();
         this.spaceWindow.position.set(300,500);
         this.addChild(this.spaceWindow);
+
     }
 
     showMessage(text) {
@@ -35,11 +38,14 @@ export default class extends PIXI.Container  {
     }
 
     show() {
+        this.active = true;
         this.uiContainer.show();
     }
 
     update() {
-        this.spaceWindow.update();
+        if (this.active) {
+            this.spaceWindow.update();
+        }
     }
 
     load() {
@@ -47,7 +53,7 @@ export default class extends PIXI.Container  {
     }
 
     sendMessage(message) {
-    	console.log("Send messsage", message);
-    	this.socketController.emit("gaijin-message", {text:message});
+    	console.log("GAIJIN - Send messsage", message);
+    	this.socketController.emit("gaijin-outbox", {text:message});
     }
 }
