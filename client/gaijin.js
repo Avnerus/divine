@@ -7,8 +7,9 @@ export default class extends PIXI.Container  {
     init() {
         this.uiContainer = $("#gaijin-ui");
         $("#gaijin-form").submit((event) => {
-        	this.sendMessage(event.target["message"].value)
-        	event.preventDefault()
+        	this.sendMessage(event.target["message"].value);
+        	event.preventDefault();
+            event.target["message"].value = "";
         })
 
         this.socketController.on("message", (data) => {
@@ -20,7 +21,8 @@ export default class extends PIXI.Container  {
       $(function(){
           $("#gaijin-output").typed({
             strings: [text],
-            typeSpeed: 0
+            typeSpeed: 0,
+            showCursor: false
           });
       });
     }
