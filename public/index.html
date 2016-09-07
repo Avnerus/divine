@@ -4,6 +4,7 @@
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <meta name="apple-mobile-web-app-capable" content="yes">
+        <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="css/divine.css" rel="stylesheet">
         <title>Divine</title>
     </head>
@@ -15,6 +16,7 @@
         <script src="lib/typed.min.js"></script>
         <script src="lib/pixi.js"></script>
         <script src="lib/socket.io-1.4.5.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
 
         <script src="bundle.js"></script>
         <div id="game"></div>
@@ -37,13 +39,20 @@
                     </form>
                 </div>
             </div>
-            <div id="gaijin-ui" style="display:none;">
-                <div id="gaijin-wingman" class="comm-wingman"></div>
-                <div id="gaijin-box" class="comm-box">
-                    <div id="gaijin-output" class="comm-output">Gaijin</div>
-                    <form id="gaijin-form" class="comm-form" method="POST" autocomplete="off">
-                        <input name="message" id="gaijin-input" class="comm-input"></input>
-                    </form>
+            <div id="gaijin-ui" class="container-fluid" style="display:none;">
+                <div class="row" style="height:100%">
+                    <div class="col-xs-6" style="height: 100%; padding-right:0;">
+                        <div id="gaijin-wingman" class="comm-wingman">
+                            <div id="gaijin-output" class="comm-output">Gaijin</div>
+                            <form id="gaijin-form" class="comm-form" method="POST" autocomplete="off">
+                                <input name="message" id="gaijin-input" class="comm-input"></input>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-6" style="height: 100%; padding-left:0;">
+                        <div id="gaijin-box" class="comm-box">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

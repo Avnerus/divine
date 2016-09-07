@@ -1,6 +1,8 @@
-import TranslationService from './translation_service';
 import express from 'express';
 import socketio from 'socket.io'
+
+import TranslationService from './translation_service';
+import Dialog from './dialog';
 
 const app = express();
 const server = require('http').Server(app);
@@ -23,7 +25,14 @@ this.translationService.jumble("Good luck")
         this.scene.addChild(text);
         });*/
 
+let dialog = null;
+
 io.on('connection', (socket) => {
+    socket.on('gaijin-start',  (data) => {
+        console.log("Gaijin Starting!", data)
+        dialog = new Dialog(socket, translationService);        
+        dialog.start();
+    });
     socket.on('gaijin-outbox',  (data) => {
         console.log("Gaijin Jumble!", data)
         translationService.jumble(data.text)

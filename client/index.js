@@ -33,7 +33,7 @@ window.onload = function() {
         }*/
 
         
-        if (fullscreen.available()) {
+        if (0 && fullscreen.available()) {
             var fs = fullscreen(el);
 
             fs.on('attain',function() {
