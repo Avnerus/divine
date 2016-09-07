@@ -79,6 +79,28 @@ body {
     width: 100%;
     position: absolute;
 }
+
+#intro {
+    display:flex;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    background-color:black;
+}
+
+#intro-content {
+    color:white;
+    font-family:monospace;
+    margin:auto;
+    max-width:800px;
+}
+
+#intro-content p {
+    text-align:left;
+    max-width:800px;
+}
+
 .angel-input {
     background-color: rgba(0, 0, 0, 0.5);
     display: block;

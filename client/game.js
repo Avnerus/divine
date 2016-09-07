@@ -50,14 +50,24 @@ export default class  {
         this.container = document.getElementById('game');
         this.container.appendChild(this.renderer.view);
         this.resize();
+        //$("#portal").show();
+        this.showIntro();
 
-        $("#portal").show();
-
+        $("#intro").click(() => {$("#intro").fadeOut("slow");$("#portal").fadeIn("slow");});
         $("#gaijin-button").click(() => {this.showInterface(this.gaijin)});
         $("#angel-button").click(() => {this.showInterface(this.angel)});
 
         /*this.angel.show();*/
 
+    }
+
+    showIntro(){
+        $("#intro").show();
+        $("#intro-content").typed({
+            strings: ["<h1>DIVINE</h1>","<p>Who could have predicted 30 years ago, that the final bastion of human civilization would be a Japanese space fortress floating through space, on course for Mars.</p>"],
+            typeSpeed: 0,
+            showCursor: false
+        });
     }
 
     showInterface(module) {
