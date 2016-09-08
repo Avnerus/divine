@@ -3,7 +3,9 @@ export default {
   "dialog": [
     {
       "id": 1,
-      "content": "Hey, you there! You look like a fellah with half of a brain or more, you wouldn’t mind helping me with this thing? There’s something odd with the engine, and the ship keeps losing power. At this rate we might not make it all the way.",
+      /*
+         "content": "Hey, you there! You look like a fellah with half of a brain or more, you wouldn’t mind helping me with this thing? There’s something odd with the engine, and the ship keeps losing power. At this rate we might not make it all the way.",*/
+      "content" : "Please help",
       "questions": [
         {
           "content": "Sure, I know everything about spaceships!",

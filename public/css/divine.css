@@ -44,6 +44,8 @@ body {
    height: 100%;
    width: 100%;
    display: flex;
+   top:0;
+   position:absolute;
 }
 
 .portal-button {
@@ -73,6 +75,7 @@ body {
 }
 
 #game-ui {
+
     display: flex;
     align-items: center;
     height: 30%;
@@ -100,9 +103,9 @@ body {
 #intro {
     display:flex;
     top:0;
+    position:absolute;
     height:100%;
     width:100%;
-    position:absolute;
     background-color:black;
 }
 

@@ -17,7 +17,10 @@ export default class extends PIXI.Container  {
             bgRect.position.set(0,y);
             bgRect.interactive = true;
             bgRect.buttonMode = true;
+            bgRect.alpha = 0.8;
             bgRect.click = () => {this.onChoice(i)};
+            bgRect.mouseover = function() {this.alpha = 1};
+            bgRect.mouseout = function() {this.alpha = 0.8};
             this.addChild(bgRect); 
             y += 250;
         }

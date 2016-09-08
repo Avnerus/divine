@@ -1,16 +1,18 @@
-import Mechanic from './characters/mechanic'
 export default class {
-    constructor(socket, translationService) {
+    constructor(socket, character, translationService) {
         this.translationService = translationService;
         this.socket = socket;
+        this.character = character;
+
+        this.socket.on("gaijin-choice", (data) => {this.playerChoice(data.index)});
     }
     start() {
-        // Mechanic demo
-        console.log("Bring in " + Mechanic.name);
-        let choices = Mechanic.dialog[0].questions.map((e) => {return e.content })
-        this.translationService.jumble(Mechanic.dialog[0].content)
+        console.log("Bring in " + this.character.name);
+        this.currentIndex = 0;
+        let choices = this.character.dialog[0].questions.map((e) => {return e.content })
+        this.translationService.jumble(this.character.dialog[0].content)
         .then((result) => {
-            this.socket.emit("character-enters", {name: Mechanic.name, text: result, choices: choices})
+            this.socket.emit("character-enters", {name: this.character.name, text: result, choices: choices})
         });
     }
 
@@ -20,4 +22,12 @@ export default class {
     showMessage(text) {
     }
 
+    playerChoice(index) {
+        console.log("Player chooses", index);
+        let answer = this.character.dialog[this.currentIndex].questions[index].content;
+        this.translationService.jumble(answer)
+        .then((result) => {
+            this.socket.emit("gaijin-reply", {text: result})
+        });
+    }
 }

@@ -24,6 +24,11 @@ export default class extends PIXI.Container  {
             this.showMessage(data.text);
         });
 
+        this.socketController.on("gaijin-reply", (data) => {
+            console.log("Gaijin replies", data);
+            this.gaijinReply(data.text);
+        });
+
         this.socketController.on("character-enters", (data) => {
             this.characterEnters(data);
         });
@@ -84,7 +89,26 @@ export default class extends PIXI.Container  {
         }});
     }
 
+    gaijinReply(text) {
+        this.sayToCharacter(text)
+        
+    }
+
+    sayToCharacter(text) {
+        return new Promise((resolve, reject) => {
+            $(() => {
+                $("#gaijin-box").typed({
+                    strings: ["<b>You</b>: " + text],
+                    typeSpeed: 0,
+                    showCursor: false,
+                    onStringTyped: () => {resolve()}
+                });
+            });
+        });
+    }
+
     onChoice(choice) {
         console.log("Player choice! ", choice);
+        this.socketController.emit("gaijin-choice", {index: choice});
     }
 }

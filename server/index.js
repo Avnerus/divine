@@ -4,6 +4,7 @@ import socketio from 'socket.io'
 import TranslationService from './translation_service';
 import Dialog from './dialog';
 import Console from './console';
+import Mechanic from './characters/mechanic'
 
 const app = express();
 const server = require('http').Server(app);
@@ -32,7 +33,7 @@ let consoleWindow = null;
 io.on('connection', (socket) => {
     socket.on('gaijin-start',  (data) => {
         console.log("Gaijin Starting!", data)
-        dialog = new Dialog(socket, translationService);        
+        dialog = new Dialog(socket, Mechanic, translationService);        
         dialog.start();
     });
     socket.on('angel-start',  (data) => {
