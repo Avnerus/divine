@@ -88,9 +88,9 @@ body {
 
 #angel-ui {
     position: absolute;
-    height: 100%;
+    height: 29%;
     width: 100%;
-    bottom: 0;
+    bottom: 10px;
     padding: 0;
 }
 
@@ -143,13 +143,22 @@ body {
 }
 
 #angel-input {
-    border:2px solid white;
+    border:none;
+}
+
+#angel-output {
+    padding-left:12px;
+    border-left:none;
+    border-right:none;
+}
+
+#console-input {
+    border:none;
 }
 
 
 #angel-console {
     height:100%;
-        border:2px solid white;
 }
 
 .angel-chat{
@@ -158,24 +167,21 @@ body {
 
 .angel-search{
     height:30%;
-
 }
 
 .console-output {
     height: 50%;
     background: black none repeat scroll 0% 0%;
     color:white;
-    border:1px solid white;
     font-family:'VT323', monospace;
     font-size:1.5em;
     padding: 3px;
-    padding-left:6px;
+    padding-left:12px;
 
 }
 
 .comm-box {
     background-color: black;
-    border: 1px solid white;
     height: 100%;
     color: white;
     font-size: 16px;
@@ -198,7 +204,7 @@ body {
     height: 100%;
     width: 100%;
     padding:3px;
-    padding-left:6px;
+    padding-left:12px;
 
 }
 

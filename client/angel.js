@@ -43,6 +43,7 @@ export default class extends PIXI.Container  {
     }
 
     show() {
+        $("#game-ui").hide();
         $("#angel-ui").show();
         $("#angel-ui-overlay").show();
         this.active = true;

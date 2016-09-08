@@ -34,29 +34,30 @@
                 <img src="assets/fish_icon.png" class="img-responsive">
             </a>
         </div>
+        <div id="angel-ui" style="display:none;">
+                <div class="angel-row angel-search">
+                    <div id="angel-console">
+                        <div id="console-output" class="console-output">Search the database:</div>
+                        <form id="angel-console-form" method="POST" autocomplete="off">
+                            <input name="console-message" id="console-input" class="comm-input" placeholder="Search..."></input>
+                        </form>
+                    </div>
+                </div>
+                <div class="angel-row angel-chat">
+                <!--<div id="angel-wingman" class="comm-wingman"></div>-->
+                    <div id="angel-box" class="comm-box">
+                        <div id="angel-output" class="comm-output">Angel</div>
+                        <form id="angel-form" class="comm-form" method="POST" autocomplete="off">
+                        <input name="message" id="angel-input" class="comm-input" placeholder="Chat..."></input>
+                        </form>
+                    </div>
+                </div>
+        </div>
+
         <div id="game-ui">
             <div id="intro" style="display:none;">
                 <div id="intro-content">
                 </div>
-            </div>
-            <div id="angel-ui" style="display:none;">
-                    <div class="angel-row angel-search">
-                        <div id="angel-console">
-                            <div id="console-output" class="console-output">Search the database:</div>
-                            <form id="angel-console-form" method="POST" autocomplete="off">
-                                <input name="console-message" id="console-input" class="comm-input" placeholder="Search..."></input>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="angel-row angel-chat">
-                    <!--<div id="angel-wingman" class="comm-wingman"></div>-->
-                        <div id="angel-box" class="comm-box">
-                            <div id="angel-output" class="comm-output">Angel</div>
-                            <form id="angel-form" class="comm-form" method="POST" autocomplete="off">
-                              <input name="message" id="angel-input" class="comm-input" placeholder="Chat..."></input>
-                            </form>
-                        </div>
-                    </div>
             </div>
             <div id="gaijin-ui" class="container-fluid" style="display:none;">
                 <div class="row" style="height:100%">
