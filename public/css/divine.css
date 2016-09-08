@@ -89,6 +89,14 @@ body {
     padding: 0;
 }
 
+#angel-ui {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    padding: 0;
+}
+
 #intro {
     display:flex;
     top:0;
@@ -120,14 +128,14 @@ body {
     width: 90%;
 }
 
-#angel-console {
+/*#angel-console {
     background-color: rgba(0, 0, 0, 0.8);
     height: 65%;
     left: 5%;
     position: absolute;
     top: 5%;
     width: 90%
-}
+}*/
 
 
 .comm-box {
@@ -169,8 +177,8 @@ body {
     height: 80%;
 }
 
-#angel-console-form {
+/*#angel-console-form {
     position: absolute;
     bottom: 0;
     width: 100%;
-}
+}*/

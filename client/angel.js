@@ -21,6 +21,17 @@ export default class extends PIXI.Container  {
             console.log("Incoming message to angel! ", data);
             this.showMessage(data.text);
         });
+
+        $("#angel-console-form").submit((event) => {
+            event.preventDefault();
+            console.log(event.target["console-message"]);
+            this.sendConsoleMessage(event.target["console-message"].value);
+            event.target["console-message"].value = "";
+        })
+
+        this.socketController.on("angel-console", (data) => {
+            console.log(data.text);
+        });
     }
 
     showMessage(text) {
@@ -36,10 +47,16 @@ export default class extends PIXI.Container  {
     show() {
         this.uiContainer.show();
         this.active = true;
+        this.socketController.emit("angel-start", {});
     }
 
     update() {
 
+    }
+
+    sendConsoleMessage(message){
+        console.log("ANGEL console - Send", message);
+        this.socketController.emit("angel-console", {text:message});
     }
 
     sendMessage(message) {
