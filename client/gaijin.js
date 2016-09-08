@@ -1,5 +1,6 @@
 import Window from './window'
 import Choices from './choices'
+import Util from './util'
 
 export default class extends PIXI.Container  {
     constructor(config, socketController, characters) {
@@ -45,18 +46,7 @@ export default class extends PIXI.Container  {
     }
 
     showMessage(sender, message) {
-        let newText = document.createElement("p");
-        $("#gaijin-output").append(newText);
-        $('#gaijin-output').animate({
-            scrollTop: $('#gaijin-output').get(0).scrollHeight
-        }, 500)
-        $(function(){
-            $(newText).typed({
-              strings: ["<b>" + sender + "<b>: " + message],
-              typeSpeed: 0,
-              showCursor: false
-            });
-        });
+        Util.appendScrollingText($("#gaijin-output"), "<b>" + sender + "<b>: " + message)
     }
 
     show() {
