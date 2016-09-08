@@ -7,6 +7,7 @@ export default class extends PIXI.Container  {
         this.socketController = socketController;
         this.spaceWindow = new Window();
         this.characters = characters;
+        this.currentCharacter = null;
 
         this.active = false;
     }
@@ -31,6 +32,10 @@ export default class extends PIXI.Container  {
 
         this.socketController.on("character-enters", (data) => {
             this.characterEnters(data);
+        });
+
+        this.socketController.on("character-says", (data) => {
+            this.characterSays(data);
         });
 
         this.spaceWindow.init();
@@ -72,25 +77,35 @@ export default class extends PIXI.Container  {
     }
 
     characterEnters(data) {
-        let character = this.characters[data.name];
+        this.currentCharacter = this.characters[data.name];
         console.log("Character enters", data);
-        character.position.x = -character.width;
-        this.addChild(character);
-        TweenMax.to(character.position, 1, {x: 300, onComplete: () => {
-            character.say(data.text)
+        this.currentCharacter.position.x = -this.currentCharacter.width;
+        this.addChild(this.currentCharacter);
+        TweenMax.to(this.currentCharacter.position, 1, {x: 300, onComplete: () => {
+            this.currentCharacter.say(data.text)
             .then(() => {
-                let choices = new Choices(data.choices, (choice) => {this.onChoice(choice)});
-                choices.init();
-                choices.position.set(1100,50);
-                choices.alpha = 0;
-                this.addChild(choices);
-                TweenMax.to(choices, 1, {alpha: 1});
+                this.showChoices(data.choices);
             })
         }});
     }
 
+    showChoices(choicesData) {
+        let choices = new Choices(choicesData, (choice) => {
+            this.onChoice(choice)
+            TweenMax.to(choices, 1, {alpha: 0, onComplete: () => {choices = null}});
+        });
+        choices.init();
+        choices.position.set(1100,50);
+        choices.alpha = 0;
+        this.addChild(choices);
+        TweenMax.to(choices, 1, {alpha: 1});
+    }
+
     gaijinReply(text) {
         this.sayToCharacter(text)
+        .then(() => {
+            this.socketController.emit("gaijin-next");
+        })
         
     }
 
@@ -105,6 +120,13 @@ export default class extends PIXI.Container  {
                 });
             });
         });
+    }
+
+    characterSays(data) {
+        this.currentCharacter.say(data.text)
+        .then(() => {
+            this.showChoices(data.choices);
+        })
     }
 
     onChoice(choice) {

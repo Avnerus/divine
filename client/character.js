@@ -22,6 +22,7 @@ export default class extends PIXI.Container  {
     }
 
     say(text) {
+        console.log(this.name + " Says: " + text);
         return new Promise((resolve, reject) => {
             $(() => {
                 $("#gaijin-box").typed({

@@ -10,7 +10,7 @@ export default class extends PIXI.Container  {
         for (let i = 0; i < this.choices.length; i++) {
             let choice = this.choices[i];
             let bgRect = new PIXI.Sprite(PIXI.loader.resources['choice-rect'].texture)
-            let text = new PIXI.Text(choice, {fill: "#ffffff"});
+            let text = new PIXI.Text(choice, {fill: "#ffffff", wordWrap: true, wordWrapWidth: 600});
             text.anchor.set(0.5, 0.5);
             text.position.set(bgRect.width / 2, bgRect.height / 2);
             bgRect.addChild(text);
