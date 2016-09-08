@@ -3,6 +3,7 @@ import SocketController from './socket-controller'
 import Angel from './angel';
 import Gaijin from './gaijin';
 import Character from './character';
+import GuiManager from './gui_manager';
 
 export default class  {
     constructor(config) {
@@ -15,6 +16,10 @@ export default class  {
         class CustomEmitter extends EventEmitter {}
         this.emitter = new CustomEmitter();
         global.events = this.emitter;
+
+
+        this.gui = new GuiManager();
+        //this.gui.init();
 
         this.socketController = new SocketController();
         this.socketController.init();

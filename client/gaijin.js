@@ -1,6 +1,7 @@
 import Window from './window'
 import Choices from './choices'
 import Util from './util'
+import Debug from './debug';
 
 export default class extends PIXI.Container  {
     constructor(config, socketController, characters) {
@@ -39,9 +40,16 @@ export default class extends PIXI.Container  {
             this.characterSays(data);
         });
 
+        let bgSprite = new PIXI.Sprite(PIXI.loader.resources['gaijin_bg'].texture)
+
         this.spaceWindow.init();
-        this.spaceWindow.position.set(300,500);
+        this.spaceWindow.position.set(1540,520);
+
+        //Debug.positionObject(this.spaceWindow, "Window");
+
         this.addChild(this.spaceWindow);
+
+        this.addChild(bgSprite);
 
     }
 
@@ -64,6 +72,9 @@ export default class extends PIXI.Container  {
     load() {
         this.spaceWindow.load();
         Choices.load();
+
+        PIXI.loader.add('gaijin_bg', 'assets/gaijin_bg.png');        
+
     }
 
     sendMessage(message) {

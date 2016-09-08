@@ -194,3 +194,7 @@ body {
 #angel-console-form {
     height:20%;
 }
+
+.dg.ac {
+    z-index: 999 !important;
+}
