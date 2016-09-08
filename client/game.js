@@ -106,14 +106,14 @@ export default class  {
         this.playMusic.play();
     }
 
-    animate(t) {
-        this.update();
+    animate(dt) {
+        this.update(dt);
         this.render();
     }
 
-    update() {
-        this.gaijin.update();
-        this.angel.update();
+    update(dt) {
+        this.gaijin.update(dt);
+        this.angel.update(dt);
     }
 
     render() {

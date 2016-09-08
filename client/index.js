@@ -15,6 +15,8 @@ game.init();
 //var el = document.getElementById('game');
 var el = document.documentElement;
 
+var startTime = null;
+
 window.onload = function() {
     document.getElementById('start-button').addEventListener('click',function(event) {
         /*
@@ -69,15 +71,18 @@ function start() {
     window.addEventListener('vrdisplaypresentchange', resize, true);
     game.resize();
     stats.begin();
-    animate();
+    requestAnimationFrame(animate);
 }
 
 
 function animate(t) {
-    requestAnimationFrame(animate);
+    if (!startTime) startTime = t;
+    var dt = t - startTime;
+    startTime = t;
     stats.begin();
-    game.animate(t);
+    game.animate(dt);
     stats.end();
+    requestAnimationFrame(animate);
 }
 
 function resize() {

@@ -2,6 +2,7 @@ import Window from './window'
 import Choices from './choices'
 import Util from './util'
 import Debug from './debug';
+import Smoke from './smoke';
 
 export default class extends PIXI.Container  {
     constructor(config, socketController, characters) {
@@ -10,6 +11,7 @@ export default class extends PIXI.Container  {
         this.spaceWindow = new Window();
         this.characters = characters;
         this.currentCharacter = null;
+        this.smoke = new Smoke();
 
         this.active = false;
     }
@@ -42,14 +44,17 @@ export default class extends PIXI.Container  {
 
         this.spaceWindow.init();
         this.spaceWindow.position.set(1540,520);
-
-        //Debug.positionObject(this.spaceWindow, "Window");
-
         this.addChild(this.spaceWindow);
+        //Debug.positionObject(this.spaceWindow, "Window");
 
         let bgSprite = new PIXI.Sprite(PIXI.loader.resources['gaijin_bg'].texture)
         this.addChild(bgSprite);
 
+        this.smoke.init();
+        this.smoke.position.set(1175,698);
+        this.smoke.rotation = 90 * Math.PI / 180;
+        //Debug.positionObject(this.smoke, "Smoke");
+        this.addChild(this.smoke);
     }
 
     showMessage(sender, message) {
@@ -63,14 +68,16 @@ export default class extends PIXI.Container  {
         this.socketController.emit("gaijin-start", {});
     }
 
-    update() {
+    update(dt) {
         if (this.active) {
             this.spaceWindow.update();
+            this.smoke.update(dt);
         }
     }
 
     load() {
         this.spaceWindow.load();
+        this.smoke.load();
         Choices.load();
 
         PIXI.loader.add('gaijin_bg', 'assets/gaijin_bg.png');        
