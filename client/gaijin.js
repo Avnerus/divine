@@ -102,7 +102,7 @@ export default class extends PIXI.Container  {
             TweenMax.to(choices, 1, {alpha: 0, onComplete: () => {choices = null}});
         });
         choices.init();
-        choices.position.set(870,50);
+        choices.position.set(850,50);
         choices.alpha = 0;
         this.addChild(choices);
         TweenMax.to(choices, 1, {alpha: 1});

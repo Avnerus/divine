@@ -59,20 +59,14 @@ body {
     color: black;
 }
 
-#gaijin-button {
-    background-color: #00ff00;
-}
-#gaijin-button:hover {
-    background-color: #00dd00;
+.portal-button img {
+    opacity: 0.7;
 }
 
-#angel-button {
-    background-color: #00ffff;
+.portal-button img:hover {
+    opacity:1.0; 
 }
 
-#angel-button:hover {
-    background-color: #00dddd;
-}
 
 #game-ui {
 

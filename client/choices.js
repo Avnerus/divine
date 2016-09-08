@@ -17,10 +17,9 @@ export default class extends PIXI.Container  {
             bgRect.position.set(0,y);
             bgRect.interactive = true;
             bgRect.buttonMode = true;
-            bgRect.alpha = 0.8;
             bgRect.click = () => {this.onChoice(i)};
-            bgRect.mouseover = function() {this.alpha = 1};
-            bgRect.mouseout = function() {this.alpha = 0.8};
+            bgRect.mouseover = function() {this.texture = PIXI.loader.resources['choice-rect-hover'].texture};
+            bgRect.mouseout = function() {this.texture = PIXI.loader.resources['choice-rect'].texture};
             this.addChild(bgRect); 
             y += 250;
         }
@@ -35,5 +34,6 @@ export default class extends PIXI.Container  {
     static load() {
         console.log("Loading Choice rect");
         PIXI.loader.add("choice-rect", 'assets/choice-rect.png');        
+        PIXI.loader.add("choice-rect-hover", 'assets/choice-rect_hover.png');        
     }
 }
