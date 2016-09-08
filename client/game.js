@@ -19,14 +19,14 @@ export default class  {
 
 
         this.gui = new GuiManager();
-        //this.gui.init();
+        this.gui.init();
 
         this.socketController = new SocketController();
         this.socketController.init();
 
         this.stage = new PIXI.Container();
         this.renderer = PIXI.autoDetectRenderer(this.config.width, this.config.height);
-        this.renderer.backgroundColor = 0x003F54;
+        this.renderer.backgroundColor = 0x000000;
 
         this.scene = new PIXI.Container();
         this.stage.addChild(this.scene);
