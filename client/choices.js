@@ -17,7 +17,7 @@ export default class extends PIXI.Container  {
             bgRect.position.set(0,y);
             bgRect.interactive = true;
             bgRect.buttonMode = true;
-            bgRect.click = () => {this.onChoice(i)};
+            bgRect.tap = bgRect.click = () => {this.onChoice(i)};
             bgRect.mouseover = function() {this.texture = PIXI.loader.resources['choice-rect-hover'].texture};
             bgRect.mouseout = function() {this.texture = PIXI.loader.resources['choice-rect'].texture};
             this.addChild(bgRect); 
