@@ -1,3 +1,5 @@
+import Util from './util'
+
 export default class extends PIXI.Container  {
     constructor(config, socketController) {
         super();
@@ -19,7 +21,7 @@ export default class extends PIXI.Container  {
 
         this.socketController.on("angel-inbox", (data) => {
             console.log("Incoming message to angel! ", data);
-            this.showMessage(data.text);
+            this.showMessage("Gaijin", data.text);
         });
 
         $("#angel-console-form").submit((event) => {
@@ -34,14 +36,8 @@ export default class extends PIXI.Container  {
         });
     }
 
-    showMessage(text) {
-      $(function(){
-          $("#angel-output").typed({
-            strings: [text],
-            typeSpeed: 0,
-            showCursor: false
-          });
-      });
+    showMessage(sender, message) {
+      Util.appendScrollingText($("#angel-output"), "<b>" + sender + "<b>: " + message);
     }
 
     show() {
@@ -61,6 +57,7 @@ export default class extends PIXI.Container  {
 
     sendMessage(message) {
         console.log("ANGEL - Send messsage", message);
+        this.showMessage("You", message);
         this.socketController.emit("angel-outbox", {text:message});
     }
 }
