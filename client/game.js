@@ -2,6 +2,7 @@ import EventEmitter from 'events'
 import SocketController from './socket-controller'
 import Angel from './angel';
 import Gaijin from './gaijin';
+import Character from './character';
 
 export default class  {
     constructor(config) {
@@ -18,9 +19,6 @@ export default class  {
         this.socketController = new SocketController();
         this.socketController.init();
 
-        this.gaijin = new Gaijin(this.config, this.socketController);
-        this.angel = new Angel(this.config, this.socketController);
-
         this.stage = new PIXI.Container();
         this.renderer = PIXI.autoDetectRenderer(this.config.width, this.config.height);
         this.renderer.backgroundColor = 0x003F54;
@@ -28,18 +26,33 @@ export default class  {
         this.scene = new PIXI.Container();
         this.stage.addChild(this.scene);
 
+        this.characters = {
+            'mechanic': new Character('mechanic')
+        }
+
+        this.gaijin = new Gaijin(this.config, this.socketController, this.characters);
+        this.angel = new Angel(this.config, this.socketController);
 
     }
 
     load(onLoad) {
         PIXI.loader.once('complete',() => {
             console.log("Loading complete");
+            Object.keys(this.characters).forEach((key) => {
+              let obj = this.characters[key];
+              obj.init();
+            });
 
             onLoad();
         });
 
         this.gaijin.load();
         this.angel.load();
+
+        Object.keys(this.characters).forEach((key) => {
+          let obj = this.characters[key];
+          obj.load();
+        });
 
         PIXI.loader.load();
 
