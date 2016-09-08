@@ -15,7 +15,6 @@ export default class extends PIXI.Container  {
     }
     
     init() {
-        this.uiContainer = $("#gaijin-ui");
         $("#gaijin-form").submit((event) => {
         	this.sendMessage(event.target["message"].value);
         	event.preventDefault();
@@ -59,7 +58,8 @@ export default class extends PIXI.Container  {
 
     show() {
         this.active = true;
-        this.uiContainer.show();
+        $("#gaijin-ui").show();
+        $("#gaijin-ui-overlay").show();
         this.socketController.emit("gaijin-start", {});
     }
 
@@ -87,9 +87,10 @@ export default class extends PIXI.Container  {
         console.log("Character enters", data);
         this.currentCharacter.position.x = -this.currentCharacter.width;
         this.addChild(this.currentCharacter);
-        TweenMax.to(this.currentCharacter.position, 1, {x: 300, onComplete: () => {
+        TweenMax.to(this.currentCharacter.position, 1, {x: 100, onComplete: () => {
             this.currentCharacter.say(data.text)
             .then(() => {
+                //Debug.positionObject(this.currentCharacter, "Character");
                 this.showChoices(data.choices);
             })
         }});
@@ -101,7 +102,7 @@ export default class extends PIXI.Container  {
             TweenMax.to(choices, 1, {alpha: 0, onComplete: () => {choices = null}});
         });
         choices.init();
-        choices.position.set(1100,50);
+        choices.position.set(870,50);
         choices.alpha = 0;
         this.addChild(choices);
         TweenMax.to(choices, 1, {alpha: 1});
