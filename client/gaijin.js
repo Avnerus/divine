@@ -74,7 +74,6 @@ export default class extends PIXI.Container  {
         Choices.load();
 
         PIXI.loader.add('gaijin_bg', 'assets/gaijin_bg.png');        
-
     }
 
     sendMessage(message) {
@@ -111,7 +110,9 @@ export default class extends PIXI.Container  {
     gaijinReply(text) {
         this.sayToCharacter(text)
         .then(() => {
-            this.socketController.emit("gaijin-next");
+            setTimeout(() => {
+                this.socketController.emit("gaijin-next");
+            },1500);
         })
         
     }

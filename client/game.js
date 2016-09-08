@@ -59,6 +59,10 @@ export default class  {
           obj.load();
         });
 
+
+        PIXI.loader.add("intro-music", "assets/audio/shooreh.ogg");
+        PIXI.loader.add("play-music", "assets/audio/nighttime.ogg");
+
         PIXI.loader.load();
 
     }
@@ -86,6 +90,9 @@ export default class  {
             typeSpeed: 2,
             showCursor: false
         });
+        this.introMusic = PIXI.audioManager.getAudio('intro-music');
+        this.introMusic.play();
+        console.log(this.introMusic);
     }
 
     showInterface(module) {
@@ -93,6 +100,10 @@ export default class  {
         module.init();
         module.show();
         this.scene.addChild(module);
+
+        this.introMusic.stop();
+        this.playMusic = PIXI.audioManager.getAudio('play-music');
+        this.playMusic.play();
     }
 
     animate(t) {
