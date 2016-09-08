@@ -82,8 +82,8 @@ export default class  {
     showIntro(){
         $("#intro").show();
         $("#intro-content").typed({
-            strings: ["<h1>DIVINE</h1>","<p>Who could have predicted 30 years ago, that the final bastion of human civilization would be a Japanese space fortress floating through space, on course for Mars.</p>"],
-            typeSpeed: 0,
+            strings: ["<p>Who could have predicted, that the final bastion of human civilization would be a Japanese space fortress floating on course for Mars.</p><p>A sole outsider, 外人 or gaijin, survived the incident on earth by sneaking onto the flying fortress when it departed Tokyo.</p><p>Stranded in an environment where they can understand no-one, the only help the outsider has is an unnamed divine being – half slug, half fish, all adorable – who is able to decipher the language of the crew of the ship to a form the gaijin can understand... To the best of its ability.</p><p>Being divine, the creature also possesses access to the divine data register, by means of which they will aid the gaijin in their quest of surviving the journey.<p><p>Select your character and good luck."],
+            typeSpeed: 2,
             showCursor: false
         });
     }
