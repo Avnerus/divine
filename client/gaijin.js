@@ -39,7 +39,6 @@ export default class extends PIXI.Container  {
             this.characterSays(data);
         });
 
-        let bgSprite = new PIXI.Sprite(PIXI.loader.resources['gaijin_bg'].texture)
 
         this.spaceWindow.init();
         this.spaceWindow.position.set(1540,520);
@@ -48,6 +47,7 @@ export default class extends PIXI.Container  {
 
         this.addChild(this.spaceWindow);
 
+        let bgSprite = new PIXI.Sprite(PIXI.loader.resources['gaijin_bg'].texture)
         this.addChild(bgSprite);
 
     }

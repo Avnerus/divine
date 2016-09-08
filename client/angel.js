@@ -8,11 +8,10 @@ export default class extends PIXI.Container  {
     }
     
     load() {
-
+        PIXI.loader.add('fish_bg', 'assets/fish_background.png');        
     }
 
     init() {
-        this.uiContainer = $("#angel-ui");
         $("#angel-form").submit((event) => {
             this.sendMessage(event.target["message"].value);
             event.preventDefault();
@@ -34,6 +33,9 @@ export default class extends PIXI.Container  {
         this.socketController.on("angel-console", (data) => {
             $("#console-output").html(data.text);
         });
+
+        let bgSprite = new PIXI.Sprite(PIXI.loader.resources['fish_bg'].texture)
+        this.addChild(bgSprite);
     }
 
     showMessage(sender, message) {
@@ -41,7 +43,8 @@ export default class extends PIXI.Container  {
     }
 
     show() {
-        this.uiContainer.show();
+        $("#angel-ui").show();
+        $("#angel-ui-overlay").show();
         this.active = true;
         this.socketController.emit("angel-start", {});
     }
