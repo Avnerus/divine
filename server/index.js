@@ -58,6 +58,6 @@ io.on('connection', (socket) => {
     });
     socket.on('angel-console',  (data) => {
         console.log("Run query", data);
-        socket.emit("angel-console", {text:data.text});
+        socket.emit("angel-console", {text:"I have no information about "+data.text});
     });
 });

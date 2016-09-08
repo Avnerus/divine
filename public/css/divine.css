@@ -137,6 +137,16 @@ body {
     width: 90%
 }*/
 
+#angel-console {
+    height:100%;
+}
+
+.console-output {
+    height: 80%;
+    background: black none repeat scroll 0% 0%;
+    color:white;
+    border:1px solid white;
+}
 
 .comm-box {
     background-color: black;
@@ -177,8 +187,6 @@ body {
     height: 80%;
 }
 
-/*#angel-console-form {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}*/
+#angel-console-form {
+    height:20%;
+}

@@ -30,7 +30,7 @@ export default class extends PIXI.Container  {
         })
 
         this.socketController.on("angel-console", (data) => {
-            console.log(data.text);
+            $("#console-output").html(data.text);
         });
     }
 

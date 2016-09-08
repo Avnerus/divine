@@ -71,7 +71,7 @@ export default class extends PIXI.Container  {
         console.log("Character enters", data);
         character.position.x = -character.width;
         this.addChild(character);
-        TweenMax.to(character.position, 1, {x: 500, onComplete: () => {
+        TweenMax.to(character.position, 1, {x: 300, onComplete: () => {
             character.say(data.text)
             .then(() => {
                 let choices = new Choices(data.choices, (choice) => {this.onChoice(choice)});
