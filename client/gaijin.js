@@ -22,7 +22,7 @@ export default class extends PIXI.Container  {
 
         this.socketController.on("gaijin-inbox", (data) => {
             console.log("Incoming message to gaijin! ", data);
-            this.showMessage(data.text);
+            this.showMessage("Fish", data.text);
         });
 
         this.socketController.on("gaijin-reply", (data) => {
@@ -44,14 +44,19 @@ export default class extends PIXI.Container  {
 
     }
 
-    showMessage(text) {
-      $(function(){
-          $("#gaijin-output").typed({
-            strings: [text],
-            typeSpeed: 0,
-            showCursor: false
-          });
-      });
+    showMessage(sender, message) {
+        let newText = document.createElement("p");
+        $("#gaijin-output").append(newText);
+        $('#gaijin-output').animate({
+            scrollTop: $('#gaijin-output').get(0).scrollHeight
+        }, 500)
+        $(function(){
+            $(newText).typed({
+              strings: ["<b>" + sender + "<b>: " + message],
+              typeSpeed: 0,
+              showCursor: false
+            });
+        });
     }
 
     show() {
@@ -72,8 +77,8 @@ export default class extends PIXI.Container  {
     }
 
     sendMessage(message) {
-    	console.log("GAIJIN - Send messsage", message);
     	this.socketController.emit("gaijin-outbox", {text:message});
+        this.showMessage("You", message);
     }
 
     characterEnters(data) {

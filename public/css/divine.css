@@ -188,6 +188,7 @@ body {
     font-family:monospace;
     font-size:1.5em;
     height: 80%;
+    overflow-y: scroll;
 }
 
 #angel-console-form {
