@@ -109,8 +109,7 @@ export default class extends PIXI.Container  {
             this.currentCharacter.say(data.text)
             .then(() => {
                 //Debug.positionObject(this.currentCharacter, "Character");
-                //this.showChoices(data.choices);
-                this.endGood();
+                this.showChoices(data.choices);
             })
         }});
     }

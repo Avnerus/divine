@@ -44,6 +44,10 @@ export default class extends PIXI.Container  {
             }
         });
 
+        this.socketController.on("end-game", (data) => {
+          console.log("end game!", data);  
+        });
+
         let bgSprite = new PIXI.Sprite(PIXI.loader.resources['fish_bg'].texture)
         this.addChild(bgSprite);
     }

@@ -37,6 +37,9 @@ export default class {
         .then((result) => {
             data.text = result;
             this.socket.emit("character-says", data);
+            if (data.end) {
+                this.socket.broadcast.emit("end-game", {result: data.end});
+            }
         });
     }
 
