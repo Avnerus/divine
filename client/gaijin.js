@@ -109,7 +109,8 @@ export default class extends PIXI.Container  {
             this.currentCharacter.say(data.text)
             .then(() => {
                 //Debug.positionObject(this.currentCharacter, "Character");
-                this.showChoices(data.choices);
+                //this.showChoices(data.choices);
+                this.endGood();
             })
         }});
     }
@@ -156,6 +157,8 @@ export default class extends PIXI.Container  {
                 console.log("End!", data.end);                
                 if (data.end == "bad") {
                     this.endBad();
+                } else if (data.end == "good") {
+                    this.endGood();
                 }
             } else {
                 this.showChoices(data.choices);
@@ -183,6 +186,21 @@ export default class extends PIXI.Container  {
             text.alpha = 0;
             this.addChild(text);
             TweenMax.to(text, 1, {delay: 1, alpha: 1});
+        }});
+    }
+
+    endGood() {
+        this.colorFilter = new PIXI.filters.ColorMatrixFilter();
+        this.colorFilter.enabled = true;
+        this.filterLayer.filters = [this.colorFilter];
+        TweenMax.to(this.smoke.emitter, 2,{maxParticles: 0, onComplete: () => {
+            this.colorFilter.browni(true);
+            var text = new PIXI.Text('YOU WIN!\nThanks for playing ^_^',
+            {fontFamily : 'Arial', fontSize: 100, fill : 0x9103AD, align : 'center', stroke: 'white', strokeThickness: 10, fontWeight: 'bolder' });
+            text.anchor.set(0.5, 0.5);
+            text.position.set(this.config.width / 2, -300);
+            this.addChild(text);
+            TweenMax.to(text.position, 1, {y: 300});
         }});
     }
 }
