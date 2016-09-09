@@ -29,9 +29,14 @@ export default class {
         this.currentIndex = this.nextIndex;
         let entry = _.find(this.character.dialog, {"id": this.currentIndex});
         let choices = entry.questions.map((e) => {return e.content })
+        let data = {choices: choices};
+        if (entry.end) {
+            data.end = entry.end;
+        }
         this.translationService.jumble(entry.content)
         .then((result) => {
-            this.socket.emit("character-says", {text: result, choices: choices})
+            data.text = result;
+            this.socket.emit("character-says", data);
         });
     }
 
