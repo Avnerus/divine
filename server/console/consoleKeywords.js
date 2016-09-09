@@ -43,7 +43,7 @@ export default {
     {
       "command": "control rods",
       "text": "Ship's control rods are functioning nominally. Don't touch!",
-      "image": null,
+      "image": "./assets/spacegoogle/control_rods.png",
     },
     {
       "command": "mechanic's family",
@@ -53,7 +53,7 @@ export default {
     {
       "command": "spaceship",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "./assets/spacegoogle/spaceship_bottle.png"
     },
     {
       "command": "landing site",
@@ -71,8 +71,13 @@ export default {
       "image": "./assets/spacegoogle/earth.jpg"
     },
     {
+      "command": "credits",
+      "text": "Avner Peled, Wolf Wikgren, Laura Horton and Jukka Huiskonen. Mars and Landing Site images courtesy of NASA.",
+      "image": null
+    },
+    {
       "command": "help",
-      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, earth, help",
+      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, earth, credits, help",
       "image": null,
     }
   ]
