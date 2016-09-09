@@ -72,7 +72,7 @@ export default {
     },
     {
       "command": "credits",
-      "text": "Avner Peled, Wolf Wikgren, Laura Horton and Jukka Huiskonen. Mars and Landing Site images courtesy of NASA.",
+      "text": "Avner Peled, Wolf Wikgren, Laura Horton and Jukka Huiskonen. Audio by Harri Dammert. Mars and Landing Site images courtesy of NASA.",
       "image": null
     },
     {
