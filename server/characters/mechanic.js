@@ -5,7 +5,9 @@ export default {
       "id": 1,
       /*
          "content": "Hey, you there! You look like a fellah with half of a brain or more, you wouldn’t mind helping me with this thing? There’s something odd with the engine, and the ship keeps losing power. At this rate we might not make it all the way.",*/
-      "content" : "Please help, the engine is losing power and I need to fix it!",
+      // "content" : "Please help, the engine is losing power and I need to fix it!",
+
+    "content": "‘Raising  the rods to increase the reaction, that should increase power. I’ll get to it’ The mechanic raises the control rods via the fuel supply control interface. ‘It’ll take a moment until we see the nuclear reaction intensify!’ So we wait. And wait. I am getting anxious and doubt is filling my mind: I know nothing of spaceship engines, nuclear power or power supplies. I’m placing a lot of trust in this fish. Soon the control panel beeps, the mechanic rushing over to see what’s going on. ‘Yeah, the power levels are up..!’ ‘...and going higher…’ ‘...and higher…’ Simultaneously there is a warning signal, and the control panel is filled with red warning lights. ‘LOWER THE RODS, NOW!’, the mechanic shouts over the now roaring engine. I run to the power supply control and pull a lever that I think I saw the mechanic push earlier. The alarm blaring does not cease, but the interface shows the control rods descending. Slowly. All too slowly. The engine is roaring and has started to creak at its seams. ‘It’s gonna blow!’, shouts the mechanic. And right at that moment I can hear the sound of an explosion and feel a wave of air throwing me forcefully against the wall of the engine room…",
       "questions": [
         {
           "content": "Sure, I know everything about spaceships!",
