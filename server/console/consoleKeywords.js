@@ -18,7 +18,7 @@ export default {
     {
       "command": "control panel",
       "text": null,
-      "image": "There seems to be nothing of intrest in the control panel, except a mars bar."
+      "image": "./spacegoogle/control_panel.png"
     },
     {
       "command": "life support",
@@ -71,8 +71,13 @@ export default {
       "image": "./spacegoogle/mars.jpg"
     },
     {
+      "command": "earth",
+      "text": null,
+      "image": "./spacegoogle/earth.jpg"
+    },
+    {
       "command": "help",
-      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, help",
+      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, help",
       "image": null,
     }
   ]
