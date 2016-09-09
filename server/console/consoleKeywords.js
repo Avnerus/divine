@@ -1,14 +1,9 @@
 export default {
   "commands": [
     {
-      "command": "wiring",
-      "text": null,
-      "image": "assetpath/image.png"
-    },
-    {
       "command": "fuel supply",
       "text": "Fuel supply on the ship is working nominally.",
-      "image": "assetpath/image.png"
+      "image": null
     },
     {
       "command": "engine",
@@ -18,27 +13,27 @@ export default {
     {
       "command": "control panel",
       "text": null,
-      "image": "There seems to be nothing of intrest in the control panel, except a mars bar."
+      "image": "./assets/spacegoogle/control_panel.png"
     },
     {
       "command": "life support",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "./assets/spacegoogle/lifesupport.png"
     },
     {
       "command": "mechanic",
       "text": "Down to earth, with a friendly attitude towards fellow crew members.",
-      "image": null
+      "image": "./assets/spacegoogle/mechanic_ID.png"
     },
     {
       "command": "thrusters",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "./assets/spacegoogle/thrusters.png"
     },
     {
       "command": "tokyo university",
       "text": "Tokyo University was considered the top University in Japan and one of the most presigious universities on earth before the incident.",
-      "image": null
+      "image": "./assets/spacegoogle/tokyo_uni.png"
     },
     {
       "command": "engineering",
@@ -52,8 +47,8 @@ export default {
     },
     {
       "command": "mechanic's family",
-      "text": null,
-      "image": "assetpath/image.png"
+      "text": "Father: one of the most decorated mechanics in Fukushima. Mother: Top scientists at the physics department of Tokyo University. They met on a company outing and worked on the design of the spaceship together. Both perished on Earth.",
+      "image": "./assets/spacegoogle/mechanic_family.png"
     },
     {
       "command": "spaceship",
@@ -63,16 +58,21 @@ export default {
     {
       "command": "landing site",
       "text": null,
-      "image": "assetspath/landingsite.png"
+      "image": "./assets/spacegoogle/landingsite.jpg"
     },
     {
       "command": "mars",
       "text": null,
-      "image": "assetpath/mars.png"
+      "image": "./assets/spacegoogle/mars.jpg"
+    },
+    {
+      "command": "earth",
+      "text": null,
+      "image": "./assets/spacegoogle/earth.jpg"
     },
     {
       "command": "help",
-      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, help",
+      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, earth, help",
       "image": null,
     }
   ]

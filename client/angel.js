@@ -32,6 +32,11 @@ export default class extends PIXI.Container  {
 
         this.socketController.on("angel-console", (data) => {
             $("#console-output").html(data.text);
+            if(data.data.image){
+                $("#console-return-container").html("<img src='"+data.data.image+"'>");
+            } else if(data.data.text){
+                $("#console-return-container").html("<div>"+data.data.text+"</div>");
+            }
         });
 
         let bgSprite = new PIXI.Sprite(PIXI.loader.resources['fish_bg'].texture)
