@@ -63,12 +63,12 @@ export default {
     {
       "command": "landing site",
       "text": null,
-      "image": "assetspath/landingsite.png"
+      "image": "./spacegoogle/landingsite.jpg"
     },
     {
       "command": "mars",
       "text": null,
-      "image": "assetpath/mars.png"
+      "image": "./spacegoogle/mars.jpg"
     },
     {
       "command": "help",
