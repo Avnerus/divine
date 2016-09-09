@@ -7,18 +7,18 @@ export default {
     },
     {
       "command": "fuel supply",
-      "text": null,
+      "text": "Fuel supply on the ship is working nominally.",
       "image": "assetpath/image.png"
     },
     {
       "command": "engine",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "The engine seems to be losing power, and leaking some strange mist. Otherwise its a-ok!"
     },
     {
       "command": "control panel",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "There seems to be nothing of intrest in the control panel, except a mars bar."
     },
     {
       "command": "life support",
@@ -27,7 +27,7 @@ export default {
     },
     {
       "command": "mechanic",
-      "text": "lorem ipsum",
+      "text": "Down to earth, with a friendly attitude towards fellow crew members.",
       "image": null
     },
     {
@@ -42,16 +42,16 @@ export default {
     },
     {
       "command": "engineering",
-      "text": "A place for engineers.",
+      "text": "A place for engineers where they can engineer stuff.",
       "image": null
     },
     {
       "command": "control rods",
-      "text": null,
-      "image": "assetpath/image.png"
+      "text": "Ship's control rods are functioning nominally. Don't touch!",
+      "image": null,
     },
     {
-      "command": "mechanic family",
+      "command": "mechanic's family",
       "text": null,
       "image": "assetpath/image.png"
     },
@@ -59,6 +59,21 @@ export default {
       "command": "spaceship",
       "text": null,
       "image": "assetpath/image.png"
+    },
+    {
+      "command": "landing site",
+      "text": null,
+      "image": "assetspath/landingsite.png"
+    },
+    {
+      "command": "mars",
+      "text": null,
+      "image": "assetpath/mars.png"
+    },
+    {
+      "command": "help",
+      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, help",
+      "image": null,
     }
   ]
 }
