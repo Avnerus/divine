@@ -28,12 +28,12 @@ export default {
     {
       "command": "mechanic",
       "text": "Down to earth, with a friendly attitude towards fellow crew members.",
-      "image": null
+      "image": "./assets/spacegoogle/mechanic_ID.png"
     },
     {
       "command": "thrusters",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "./assets/spacegoogle/thrusters.png"
     },
     {
       "command": "tokyo university",
