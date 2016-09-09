@@ -18,7 +18,7 @@ export default {
     {
       "command": "control panel",
       "text": null,
-      "image": "./spacegoogle/control_panel.png"
+      "image": "./assets/spacegoogle/control_panel.png"
     },
     {
       "command": "life support",
@@ -63,17 +63,17 @@ export default {
     {
       "command": "landing site",
       "text": null,
-      "image": "./spacegoogle/landingsite.jpg"
+      "image": "./assets/spacegoogle/landingsite.jpg"
     },
     {
       "command": "mars",
       "text": null,
-      "image": "./spacegoogle/mars.jpg"
+      "image": "./assets/spacegoogle/mars.jpg"
     },
     {
       "command": "earth",
       "text": null,
-      "image": "./spacegoogle/earth.jpg"
+      "image": "./assets/spacegoogle/earth.jpg"
     },
     {
       "command": "help",
