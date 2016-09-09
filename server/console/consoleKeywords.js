@@ -61,9 +61,14 @@ export default {
       "image": "assetpath/image.png"
     },
     {
-      "command": "landing site"
+      "command": "landing site",
       "text": null,
       "image": "assetspath/landingsite.png"
+    },
+    {
+      "command": "mars",
+      "text": null,
+      "image": "assetpath/mars.png"
     },
     {
       "command": "help",
