@@ -26,6 +26,7 @@ export default class extends PIXI.Container  {
 
         this.socketController.on("gaijin-inbox", (data) => {
             console.log("Incoming message to gaijin! ", data);
+            PIXI.audioManager.getAudio('msg-received').play();
             this.showMessage("Fish", data.text);
         });
 
@@ -97,6 +98,7 @@ export default class extends PIXI.Container  {
 
     sendMessage(message) {
     	this.socketController.emit("gaijin-outbox", {text:message});
+        PIXI.audioManager.getAudio('msg-sent').play();
         this.showMessage("You", message);
     }
 

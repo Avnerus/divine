@@ -63,6 +63,9 @@ export default class  {
         PIXI.loader.add("intro-music", "assets/audio/shooreh.ogg");
         PIXI.loader.add("play-music", "assets/audio/nighttime.ogg");
 
+        PIXI.loader.add("msg-received", "assets/audio/msg_received.ogg");
+        PIXI.loader.add("msg-sent", "assets/audio/msg_sent.ogg");
+
         PIXI.loader.load();
 
     }
