@@ -8,6 +8,18 @@ export default class extends PIXI.Container  {
         this.sprite = new PIXI.Sprite(PIXI.loader.resources[this.name].texture)
         console.log(this.name, this.sprite);
         this.addChild(this.sprite);
+        this.element = $('#gaijin-box');
+        this.currentScrollHeight = this.element.get(0).scrollHeight;
+
+        this.element.bind('DOMSubtreeModified', () => {
+            let scrollHeight = this.element.get(0).scrollHeight;
+            if (scrollHeight != this.currentScrollHeight) {
+                this.element.animate({
+                    scrollTop: scrollHeight
+                }, 500)
+                this.currentScrollHeight = scrollHeight;
+            }
+        });
     }
 
     show() {
@@ -25,7 +37,7 @@ export default class extends PIXI.Container  {
         console.log(this.name + " Says: " + text);
         return new Promise((resolve, reject) => {
             $(() => {
-                $("#gaijin-box").typed({
+                this.element.typed({
                     strings: ["<b>" + this.name + "</b>: " + text],
                     typeSpeed: 0,
                     showCursor: false,

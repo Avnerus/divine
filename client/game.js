@@ -106,6 +106,7 @@ export default class  {
 
         this.introMusic.stop();
         this.playMusic = PIXI.audioManager.getAudio('play-music');
+        this.playMusic.loop = true;
         this.playMusic.play();
     }
 
