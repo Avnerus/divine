@@ -32,7 +32,12 @@ export default class extends PIXI.Container  {
 
         this.socketController.on("angel-console", (data) => {
             $("#console-output").html(data.text);
-            if(data.data.image){
+            
+            $("#console-return-container").css("border", "5px solid #9afee5");
+            
+            if(data.data.image && data.data.text){
+                $("#console-return-container").html("<img class='smallImg' src='"+data.data.image+"'><div>"+data.data.text+"</div>");
+            } else if(data.data.image){
                 $("#console-return-container").html("<img src='"+data.data.image+"'>");
             } else if(data.data.text){
                 $("#console-return-container").html("<div>"+data.data.text+"</div>");

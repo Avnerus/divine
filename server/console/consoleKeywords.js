@@ -53,7 +53,7 @@ export default {
     {
       "command": "spaceship",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "./assets/spacegoogle/spaceship_bottle.png"
     },
     {
       "command": "landing site",
