@@ -1,5 +1,5 @@
 export default class {
-    
+
     constructor(socket, keywords, translationService) {
         this.translationService = translationService;
         this.socket = socket;
@@ -21,7 +21,7 @@ export default class {
             }
 
             if(results.length >= 1){
-                socket.emit("angel-console", {text: "Found the following info about '"+results[0].command+"'"});
+                socket.emit("angel-console", {text: "Found the above match about '"+results[0].command+"'", data:results[0]});
             } else {
                 socket.emit("angel-console", {text: "No results found on '"+data.text+"'"});
             }
