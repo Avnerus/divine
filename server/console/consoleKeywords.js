@@ -52,8 +52,8 @@ export default {
     },
     {
       "command": "mechanic's family",
-      "text": null,
-      "image": "assetpath/image.png"
+      "text": "Father: one of the most decorated mechanics in Fukushima. Mother: Top scientists at the physics department of Tokyo University. They met on a company outing and worked on the design of the spaceship together. Both perished on Earth.",
+      "image": "./assets/spacegoogle/mechanic_family.png"
     },
     {
       "command": "spaceship",
