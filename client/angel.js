@@ -47,6 +47,12 @@ export default class extends PIXI.Container  {
 
         this.socketController.on("end-game", (data) => {
           console.log("end game!", data);  
+          if(data.result == "good"){
+            $("#angel-end-splash").html("<div><h1>Congratulations!</h1><p>You have successfully helped the gaijin pass the first task</p></div>");
+          } else if (data.result == "bad") {
+            $("#angel-end-splash").html("<div><h1>Game over</h1><p>You have failed to protect the gaijin. Humanity has been destroyed.</p></div>");
+          }
+          $("#angel-end-splash").css({"opacity": 1, "display":"flex"});
         });
 
         let bgSprite = new PIXI.Sprite(PIXI.loader.resources['fish_bg'].texture)

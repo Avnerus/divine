@@ -281,3 +281,24 @@ body {
 .angel-ui-padding {
     padding-left:2%;
 }
+
+#angel-end-splash {
+    position:absolute;
+    z-index:10000;
+    display:none;
+    height:100%;
+    width:100%;
+    background-color:rgba(0,0,0,0.6);
+}
+
+#angel-end-splash div{
+    margin:auto;
+    text-align:center;
+    font-family:'VT323', monospace;
+    color:white;
+}
+
+#angel-end-splash div p{
+    font-size:1.2em;
+}
+
