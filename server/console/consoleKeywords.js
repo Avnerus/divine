@@ -61,6 +61,11 @@ export default {
       "image": "assetpath/image.png"
     },
     {
+      "command": "landing site"
+      "text": null,
+      "image": "assetspath/landingsite.png"
+    },
+    {
       "command": "help",
       "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, help",
       "image": null,
