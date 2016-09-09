@@ -43,7 +43,7 @@ export default {
     {
       "command": "control rods",
       "text": "Ship's control rods are functioning nominally. Don't touch!",
-      "image": null,
+      "image": "./assets/spacegoogle/control_rods.png",
     },
     {
       "command": "mechanic's family",
@@ -72,7 +72,7 @@ export default {
     },
     {
       "command": "credits",
-      "text": "Avner Peled, Wolf Wikgren, Laura Horton and Jukka Huiskonen",
+      "text": "Avner Peled, Wolf Wikgren, Laura Horton and Jukka Huiskonen. Mars and Landing Site images courtesy of NASA.",
       "image": null
     },
     {
