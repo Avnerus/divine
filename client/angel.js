@@ -52,7 +52,8 @@ export default class extends PIXI.Container  {
           } else if (data.result == "bad") {
             $("#angel-end-splash").html("<div><h1>Game over</h1><p>You have failed to protect the gaijin. Humanity has been destroyed.</p></div>");
           }
-          $("#angel-end-splash").css({"opacity": 1, "display":"flex"});
+          $("#angel-end-splash").css({"opacity": 0, "display":"flex"});
+          $("#angel-end-splash").animate({opacity:1}, 2000);
         });
 
         let bgSprite = new PIXI.Sprite(PIXI.loader.resources['fish_bg'].texture)

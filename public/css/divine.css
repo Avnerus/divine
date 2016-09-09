@@ -64,7 +64,7 @@ body {
 }
 
 .portal-button img:hover {
-    opacity:1.0; 
+    opacity:1.0;
 }
 
 
@@ -114,7 +114,7 @@ body {
 }
 
 #intro div {
-    font-family: 'VT323', monospace;
+    font-family:  monospace;
     font-size:1.2em;
     margin:auto;
 }
@@ -153,8 +153,8 @@ body {
 }
 
 #console-input {
-    border:none;
-}
+        border: white solid 1px;
+    }
 
 
 #angel-console {
@@ -188,8 +188,8 @@ body {
 #console-return-container div{
     padding:15px;
     margin: auto;
-    font-family: 'VT323',monospace;
-    font-size: 1.5em;
+    font-family: monospace;
+    font-size: 1.2em;
     color: white;
 }
 
@@ -202,8 +202,8 @@ body {
     height: 50%;
     background: black none repeat scroll 0% 0%;
     color:white;
-    font-family:'VT323', monospace;
-    font-size:1.5em;
+    font-family: monospace;
+    font-size:1.2em;
     padding: 3px;
 
 }
@@ -212,11 +212,11 @@ body {
     background-color: black;
     height: 95%;
     color: white;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-left: 3px;
     margin-top: 3px;
-    font-family:'VT323', monospace;
     overflow-y: scroll;
+    font-family: monospace;
 }
 
 
@@ -232,8 +232,8 @@ body {
 .comm-input {
     background-color:black;
     color:white;
-    font-family:'VT323', monospace;
-    font-size:1.5em;
+    font-family: monospace;
+    font-size:1.2em;
     height: 100%;
     width: 100%;
     padding:3px;
@@ -248,8 +248,8 @@ body {
 .comm-output {
     border: 1px solid white;
     color: white;
-    font-family:'VT323', monospace;
-    font-size:1.5em;
+    font-family: monospace;
+    font-size:1.2em;
     height: 80%;
     overflow-y: scroll;
 }
@@ -295,11 +295,10 @@ body {
 #angel-end-splash div{
     margin:auto;
     text-align:center;
-    font-family:'VT323', monospace;
+    font-family: monospace;
     color:white;
 }
 
 #angel-end-splash div p{
     font-size:1.2em;
 }
-
