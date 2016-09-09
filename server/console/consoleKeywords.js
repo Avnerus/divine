@@ -82,7 +82,7 @@ export default {
     },
     {
       "command": "help",
-      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, earth, credits, incident, help",
+      "text": "Available commands: fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, earth, credits, incident, help",
       "image": null,
     }
   ]
