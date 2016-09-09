@@ -38,7 +38,7 @@ export default {
     {
       "command": "tokyo university",
       "text": "Tokyo University was considered the top University in Japan and one of the most presigious universities on earth before the incident.",
-      "image": null
+      "image": "tokyo_uni.png"
     },
     {
       "command": "engineering",
