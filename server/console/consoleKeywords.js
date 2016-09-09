@@ -7,8 +7,8 @@ export default {
     },
     {
       "command": "engine",
-      "text": null,
-      "image": "The engine seems to be losing power, and leaking some strange mist. Otherwise its a-ok!"
+      "text": "The engine seems to be losing power, and leaking some strange mist. Otherwise its a-ok!",
+      "image": null
     },
     {
       "command": "control panel",
