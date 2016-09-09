@@ -88,9 +88,9 @@ body {
 
 #angel-ui {
     position: absolute;
-    height: 29%;
+    height: 100%;
     width: 100%;
-    bottom: 10px;
+    bottom: 15px;
     padding: 0;
 }
 
@@ -147,7 +147,6 @@ body {
 }
 
 #angel-output {
-    padding-left:12px;
     border-left:none;
     border-right:none;
 }
@@ -162,11 +161,27 @@ body {
 }
 
 .angel-chat{
-    height:70%;
+    height:20%;
+}
+
+.console-return {
+    height:72%;
+    display:flex;
+}
+
+#console-return-container{
+    max-height:80%;
+    max-width:80%;
+    margin:auto;
+}
+
+#console-return-container img{
+    width:100%;
+    height:100%;
 }
 
 .angel-search{
-    height:30%;
+    height:8%;
 }
 
 .console-output {
@@ -176,7 +191,6 @@ body {
     font-family:'VT323', monospace;
     font-size:1.5em;
     padding: 3px;
-    padding-left:12px;
 
 }
 
@@ -207,7 +221,6 @@ body {
     height: 100%;
     width: 100%;
     padding:3px;
-    padding-left:12px;
 
 }
 
@@ -248,4 +261,8 @@ body {
 #ui-overlay img {
     width: 100%;
     height: 100%;
+}
+
+.angel-ui-padding {
+    padding-left:2%;
 }
