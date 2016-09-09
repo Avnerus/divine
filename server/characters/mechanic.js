@@ -5,7 +5,7 @@ export default {
       "id": 1,
       /*
          "content": "Hey, you there! You look like a fellah with half of a brain or more, you wouldn’t mind helping me with this thing? There’s something odd with the engine, and the ship keeps losing power. At this rate we might not make it all the way.",*/
-      "content" : "Please help",
+      "content" : "Please help, the engine is losing power and I need to fix it!",
       "questions": [
         {
           "content": "Sure, I know everything about spaceships!",
@@ -65,15 +65,15 @@ export default {
       "questions":
       [
         {
-          "content": "Ask the mechanic about his life back home",
+          "content": "Ask the mechanic about life back home",
           "next-id": 6
         },
         {
-          "content": "Ask the mechanic about his love life",
+          "content": "Ask about the mechanic's love life",
           "next-id": 7
         },
         {
-          "content": "Ask the mechanic about his parents",
+          "content": "Ask about the mechanic's parents",
           "next-id": 8
         }
       ]
@@ -109,7 +109,7 @@ export default {
     },
     {
       "id": 9,
-      "content": "Well, not really. Of course it’s hard at times, but they had made it very clear to me from a young age they would never leave Japan, so I’ve had a long time to adjust to the thought. And it’s not like they did not have the opportunity to full lives, they were both far in their hundreds when they decided to move on’ The mechanics cold words were in stark contrast with his trembling voice and tearing eyes. ‘Thank you for asking though. But now I need to get on working.’ As the mechanic turned his back to you, poking at the engine control panel you could hear the faintest sounds of crying. You decide to leave the engine room and go to the cafeteria.",
+      "content": "Well, not really. Of course it’s hard at times, but they had made it very clear to me from a young age they would never leave Japan, so I’ve had a long time to adjust to the thought. And it’s not like they did not have the opportunity to full lives, they were both far in their hundreds when they decided to move on’ The mechanic's cold words were in stark contrast their trembling voice and tearing eyes. ‘Thank you for asking though. But now I need to get on working.’ As the mechanic turned their back to you, poking at the engine control panel you could hear the faintest sobs. You decide to leave the engine room and go to the cafeteria.",
       "questions": []
     },
     {
@@ -162,12 +162,12 @@ export default {
     },
     {
       "id": 15,
-      "content": "The mechanic lifts his hand toward where the red wire is connected. A hand covered in scars and burns – it wouldn’t be the first time it’s got hurt or gotten a shock, if something like that would happen… But it won’t, you checked, this should be it, but you can’t help but worry… ‘Click’ It’s connected. You can see an alert light up on the control panel, and the mechanic rushes to see what it says. ‘Error 0091, unrecognized or unsupported device in Port G.’, the mechanic repeats off the screen.  ‘These errors are a pain, now we need to reboot the control system. Are you sure you know anything about spaceships?’",
+      "content": "The mechanic lifts their hand toward where the red wire is connected. A hand covered in scars and burns – it wouldn’t be the first time it’s got hurt or gotten a shock, if something like that would happen… But it won’t, you checked, this should be it, but you can’t help but worry… ‘Click’ It’s connected. You can see an alert light up on the control panel, and the mechanic rushes to see what it says. ‘Error 0091, unrecognized or unsupported device in Port G.’, the mechanic repeats off the screen.  ‘These errors are a pain, now we need to reboot the control system. Are you sure you know anything about spaceships?’",
       "questions": []
     },
     {
       "id": 16,
-      "content": "The friendly mechanic picks up the blue wire into his hand, and looks at the panel of outputs. He looks at the red one amongst all the colorful outputs, and proceeds to push the wire connector into it. For a fraction of a second your mind is filled with a crippling doubt: Was it really the blue wire? … ‘Well that seems to have done absolutely nothin’, the mechanic exclaims and turns to look at you. ‘Do you actually know anything about spacecraft?’",
+      "content": "The friendly mechanic picks up the blue wire into their hand, and looks at the panel of outputs. He looks at the red one amongst all the colorful outputs, and proceeds to push the wire connector into it. For a fraction of a second your mind is filled with a crippling doubt: Was it really the blue wire? … ‘Well that seems to have done absolutely nothin’, the mechanic exclaims and turns to look at you. ‘Do you actually know anything about spacecraft?’",
       "questions": []
     },
     {
@@ -191,12 +191,12 @@ export default {
     },
     {
       "id": 19,
-      "content": "The mechanic does as he’s told, and goes to the panel of wires. You feel a squeeze in your windpipe as you imagine everyone on the ship suffocating, if you’ve made an error. Uncertainty fills you, was it really the red and the blue one? You hear yourself quietly uttering ‘Don’t do it…’ ‘Click’, ‘Click’ The wire is connected. ‘Did you say something’, the mechanic turns to you and asks. ‘...’ You hear the engine revving up as the mechanic walks over to the control panel. ‘Gosh darnit, seems you were right, the power is up!’ Then a red light comes on in the panel. Then another one, and soon the entire panel is lit, and an emergency horn goes off. ‘Emergency alert: Oxygen level declining. Everyone calmy make way to their personal emergency pods’ ‘Shit, shit, shit, what did you do!?’, the mechanic shouts. You rush over to the connected wire, yank it out of the panel, managing to break a pink and a green one in the process. ‘Emergency alert: Losing pressure’ ‘Emergency alert: Releasing storage’ The mechanic stares at you in rage ‘You’ve doomed us! We are all going to die!’ Panic hits you. You run to the engine room door, but it’s been locked by the emergency system. You’re stuck.",
+      "content": "The mechanic nods, and goes to the panel of wires. You feel a squeeze in your windpipe as you imagine everyone on the ship suffocating, if you’ve made an error. Uncertainty fills you, was it really the red and the blue one? You hear yourself quietly uttering ‘Don’t do it…’ ‘Click’, ‘Click’ The wire is connected. ‘Did you say something’, the mechanic turns to you and asks. ‘...’ You hear the engine revving up as the mechanic walks over to the control panel. ‘Gosh darnit, seems you were right, the power is up!’ Then a red light comes on in the panel. Then another one, and soon the entire panel is lit, and an emergency horn goes off. ‘Emergency alert: Oxygen level declining. Everyone calmy make way to their personal emergency pods’ ‘Shit, shit, shit, what did you do!?’, the mechanic shouts. You rush over to the connected wire, yank it out of the panel, managing to break a pink and a green one in the process. ‘Emergency alert: Losing pressure’ ‘Emergency alert: Releasing storage’ The mechanic stares at you in rage ‘You’ve doomed us! We are all going to die!’ Panic hits you. You run to the engine room door, but it’s been locked by the emergency system. You’re stuck.",
       "questions": []
     },
     {
       "id": 20,
-      "content": "The mechanic does as he’s told, and goes to the panel of wires. You feel a squeeze in your windpipe as you imagine everyone on the ship suffocating, if you’ve made an error. Uncertainty fills you, was it really the red and the blue one? You hear yourself quietly uttering ‘Don’t do it…’ ‘Click’, ‘Click’ The wire is connected. ‘Did you say something’, the mechanic turns to you and asks. ‘...’ You hear the engine revving up as the mechanic walks over to the control panel. ‘Gosh darnit, seems you were right, the power is up!’",
+      "content": "The mechanic nods and goes to the panel of wires. You feel a squeeze in your windpipe as you imagine everyone on the ship suffocating, if you’ve made an error. Uncertainty fills you, was it really the red and the blue one? You hear yourself quietly uttering ‘Don’t do it…’ ‘Click’, ‘Click’ The wire is connected. ‘Did you say something’, the mechanic turns to you and asks. ‘...’ You hear the engine revving up as the mechanic walks over to the control panel. ‘Gosh darnit, seems you were right, the power is up!’",
       "questions": []
     },
     {
