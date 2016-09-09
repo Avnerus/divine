@@ -1,8 +1,13 @@
-import translate from 'node-google-translate-skidz';
+//import translate from 'node-google-translate-skidz';
+import MsTranslator from 'mstranslator'
 
 export default class TranslationService {
     constructor() {
         console.log("Translation Service constructed!")
+        this.client = new MsTranslator({
+          client_id: "divine",
+          client_secret: "0ttubAnS3B9vuporgJU3WQPcapZGUmcq74Nkj7cP68U="
+        }, true);
     }
     init() {
     }
@@ -19,6 +24,21 @@ export default class TranslationService {
         });
     }
 
+    
+    translate(text,source = "en",target = "ja"){
+        return new Promise((resolve, reject) => {
+            this.client.translate({
+                text:text,
+                from: source,
+                to: target
+            }, function(err,result){
+                    resolve(result);
+            });
+        });
+    }
+    /*
+    FUCK GOOGLE
+
     translate(text,source = "en",target = "ja"){
         console.log(text);
         return new Promise((resolve, reject) => {
@@ -31,5 +51,5 @@ export default class TranslationService {
                     resolve(result);
             });
         });
-    }
+        }*/
 }
