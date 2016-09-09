@@ -1,14 +1,9 @@
 export default {
   "commands": [
     {
-      "command": "wiring",
-      "text": null,
-      "image": "assetpath/image.png"
-    },
-    {
       "command": "fuel supply",
       "text": "Fuel supply on the ship is working nominally.",
-      "image": "assetpath/image.png"
+      "image": null
     },
     {
       "command": "engine",
@@ -23,7 +18,7 @@ export default {
     {
       "command": "life support",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "./assets/spacegoogle/lifesupport.png"
     },
     {
       "command": "mechanic",
@@ -38,7 +33,7 @@ export default {
     {
       "command": "tokyo university",
       "text": "Tokyo University was considered the top University in Japan and one of the most presigious universities on earth before the incident.",
-      "image": "tokyo_uni.png"
+      "image": "./assets/spacegoogle/tokyo_uni.png"
     },
     {
       "command": "engineering",
@@ -77,7 +72,7 @@ export default {
     },
     {
       "command": "help",
-      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, help",
+      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, earth, help",
       "image": null,
     }
   ]
