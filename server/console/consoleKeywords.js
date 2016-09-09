@@ -1,14 +1,9 @@
 export default {
   "commands": [
     {
-      "command": "wiring",
-      "text": null,
-      "image": "assetpath/image.png"
-    },
-    {
       "command": "fuel supply",
       "text": "Fuel supply on the ship is working nominally.",
-      "image": "assetpath/image.png"
+      "image": null
     },
     {
       "command": "engine",
@@ -18,12 +13,12 @@ export default {
     {
       "command": "control panel",
       "text": null,
-      "image": "./spacegoogle/control_panel.png"
+      "image": "./assets/spacegoogle/control_panel.png"
     },
     {
       "command": "life support",
       "text": null,
-      "image": "assetpath/image.png"
+      "image": "./assets/spacegoogle/lifesupport.png"
     },
     {
       "command": "mechanic",
@@ -38,7 +33,7 @@ export default {
     {
       "command": "tokyo university",
       "text": "Tokyo University was considered the top University in Japan and one of the most presigious universities on earth before the incident.",
-      "image": null
+      "image": "./assets/spacegoogle/tokyo_uni.png"
     },
     {
       "command": "engineering",
@@ -63,21 +58,26 @@ export default {
     {
       "command": "landing site",
       "text": null,
-      "image": "./spacegoogle/landingsite.jpg"
+      "image": "./assets/spacegoogle/landingsite.jpg"
     },
     {
       "command": "mars",
       "text": null,
-      "image": "./spacegoogle/mars.jpg"
+      "image": "./assets/spacegoogle/mars.jpg"
     },
     {
       "command": "earth",
       "text": null,
-      "image": "./spacegoogle/earth.jpg"
+      "image": "./assets/spacegoogle/earth.jpg"
+    },
+    {
+      "command": "credits",
+      "text": "Avner Peled, Wolf Wikgren, Laura Horton and Jukka Huiskonen",
+      "image": null
     },
     {
       "command": "help",
-      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, help",
+      "text": "Available commands: \nwiring, fuel supply, engine, life support, mechanic, thrusters, tokyo university, engineering, control rods, mechanic's family, spaceship, landing site, mars, earth, credits, help",
       "image": null,
     }
   ]

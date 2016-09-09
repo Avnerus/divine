@@ -53,7 +53,6 @@ export default class extends PIXI.Container  {
             [PIXI.loader.resources['cartoon-smoke'].texture],
             this.emitterConfig
         );
-        console.log("Emitter: ", this.emitter);
         this.emitter.emit = true;
         
     }
