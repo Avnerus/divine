@@ -43,6 +43,18 @@ export default class extends PIXI.Container  {
             this.characterSays(data);
         });
 
+        this.socketController.on("gaijin-wait", () => {
+            this.showWait();
+        });
+
+        this.socketController.on("found-match", () => {
+            this.foundMatch();
+        });
+
+        this.socketController.on("match-disconnected", () => {
+            this.matchDisconnected();
+        });
+
         this.filterLayer = new PIXI.Container();
         this.addChild(this.filterLayer);
 
@@ -70,7 +82,21 @@ export default class extends PIXI.Container  {
     }
 
     showMessage(sender, message) {
-        Util.appendScrollingText($("#gaijin-output"), "<b>" + sender + "<b>: " + message)
+        Util.appendScrollingText($("#gaijin-output"), "<b>" + sender + "</b>: " + message)
+    }
+
+    showWait() {
+        Util.appendScrollingText($("#gaijin-output"), "<i>Waiting for Fish...</i>");
+    }
+    
+    foundMatch() {
+        Util.appendScrollingText($("#gaijin-output"), "<i>Fish connected!</i>");
+        PIXI.audioManager.getAudio('msg-received').play();
+    }
+
+    matchDisconnected() {
+        Util.appendScrollingText($("#gaijin-output"), "<i>Fish disconnected. Waiting for Fish...</i>");
+        PIXI.audioManager.getAudio('msg-received').play();
     }
 
     show() {

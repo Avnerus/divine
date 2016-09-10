@@ -24,6 +24,18 @@ export default class extends PIXI.Container  {
             this.showMessage("Gaijin", data.text);
         });
 
+        this.socketController.on("angel-wait", () => {
+            this.showWait();
+        });
+
+        this.socketController.on("found-match", () => {
+            this.foundMatch();
+        });
+
+        this.socketController.on("match-disconnected", () => {
+            this.matchDisconnected();
+        });
+
         $("#angel-console-form").submit((event) => {
             event.preventDefault();
             console.log(event.target["console-message"]);
@@ -61,7 +73,21 @@ export default class extends PIXI.Container  {
     }
 
     showMessage(sender, message) {
-      Util.appendScrollingText($("#angel-output"), "<b>" + sender + "<b>: " + message);
+      Util.appendScrollingText($("#angel-output"), "<b>" + sender + "</b>: " + message);
+    }
+
+    showWait() {
+        Util.appendScrollingText($("#angel-output"), "<i>Waiting for Gaijin...</i>");
+    }
+    
+    foundMatch() {
+        Util.appendScrollingText($("#angel-output"), "<i>Gaijin connected!</i>");
+        PIXI.audioManager.getAudio('msg-received').play();
+    }
+
+    matchDisconnected() {
+        Util.appendScrollingText($("#angel-output"), "<i>Gaijin disconnected. Waiting for Gaijin...</i>");
+        PIXI.audioManager.getAudio('msg-received').play();
     }
 
     show() {
